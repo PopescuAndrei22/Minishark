@@ -1,0 +1,24 @@
+# CMake generation dependency list for this directory.
+C:/Users/Alex/Desktop/Calculator/NAPI_cmake/CMakeLists.txt
+C:/Users/Alex/Desktop/Calculator/NAPI_cmake/build/CMakeFiles/3.26.0/CMakeCCompiler.cmake
+C:/Users/Alex/Desktop/Calculator/NAPI_cmake/build/CMakeFiles/3.26.0/CMakeCXXCompiler.cmake
+C:/Users/Alex/Desktop/Calculator/NAPI_cmake/build/CMakeFiles/3.26.0/CMakeRCCompiler.cmake
+C:/Users/Alex/Desktop/Calculator/NAPI_cmake/build/CMakeFiles/3.26.0/CMakeSystem.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeCInformation.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeRCInformation.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Compiler/MSVC-C.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Compiler/MSVC-CXX.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Compiler/MSVC.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Platform/Windows-MSVC-C.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Platform/Windows-MSVC-CXX.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Platform/Windows-MSVC.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Platform/Windows.cmake
+D:/cmake-3.26.0-windows-x86_64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake

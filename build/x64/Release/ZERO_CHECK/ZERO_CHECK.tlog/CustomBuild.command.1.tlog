@@ -1,0 +1,10 @@
+^C:\USERS\ALEX\DESKTOP\CALCULATOR\NAPI_CMAKE\BUILD\CMAKEFILES\32CAD1C92F763AFE80BE3F1F4F556CBF\GENERATE.STAMP.RULE
+setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Calculator/NAPI_cmake -BC:/Users/Alex/Desktop/Calculator/NAPI_cmake/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Alex/Desktop/Calculator/NAPI_cmake/build/operations.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

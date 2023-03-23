@@ -1,0 +1,12 @@
+{
+  "cmake-js": {
+    "runtime": "electron",
+    "runtimeVersion": "23.1.4"
+  },
+  "devDependencies": {
+    "cmake-js": "^7.2.1"
+  },
+  "scripts": {
+    "install": "cmake-js compile"
+  }
+}
