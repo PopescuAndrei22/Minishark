@@ -1,6 +1,5 @@
 #include <node_api.h>
 #include <string>
-#include <pcap.lib>
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
@@ -36,8 +35,12 @@ struct PacketRecord {
     Microseconds microseconds;
     uint32_t capturedPacketLength;
     uint32_t originalPacketLength;
-    vector<uint8_t> packetContent;
+    std::vector<uint8_t> packetContent;
 };
+
+int sum(int x, int y) {
+  return x + y;
+}
 
 
 napi_value Operations(napi_env env, napi_callback_info info)

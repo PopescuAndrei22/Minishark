@@ -8,7 +8,7 @@ add_definitions(-DNAPI_VERSION=4)
 
 include_directories(${CMAKE_JS_INC})
 
-file(GLOB SOURCE_FILES "D:/NAPI/operations.cc")
+file(GLOB SOURCE_FILES "C:/Users/Alex/Desktop/Minishark/operations.cc")
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
