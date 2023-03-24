@@ -35,9 +35,8 @@ int main() {
 
         packet.packetContent.resize(packet.capturedPacketLength);
 
-        std::cout << std::hex << packet.packetContent.data();
-        file.read(reinterpret_cast<char*>(packet.packetContent.data()), sizeof(packet.packetContent.data()));
-
+        // std::cout << std::hex << packet.packetContent.data();
+        file.read(reinterpret_cast<char*>(packet.packetContent.data()), packet.capturedPacketLength);
 
 
         packets.push_back(packet);
@@ -50,20 +49,27 @@ int main() {
 
     // process packets
     // ...
-    // std::cout << packets.size();
+    //std::cout << packets.size();
+    int nr = 0;
     for (const auto& packet : packets) {
+        // nr++;
+        // if(nr < 300) continue;
+        // std::cout << "Nr: " << nr << std::endl;
         std::cout << "Seconds: " << packet.seconds << std::endl;
         std::cout << "Microseconds: " << packet.microseconds << std::endl;
         std::cout << "Captured Packet Length: " << packet.capturedPacketLength << std::endl;
         std::cout << "Original Packet Length: " << packet.originalPacketLength << std::endl;
         std::cout << "Packet Content: ";
 
-        // for (const auto& byte : packet.packetContent) {
-        //     std::cout << std::hex << static_cast<int>(byte) << " ";
-        // }
+        uint32_t dstIp = (packet.packetContent[30] << 24) | (packet.packetContent[31] << 16) | (packet.packetContent[32] << 8) | packet.packetContent[33];
+        std::cout << "Destination IP: " << ((dstIp >> 24) & 0xff) << "." << ((dstIp >> 16) & 0xff) << "." << ((dstIp >> 8) & 0xff) << "." << (dstIp & 0xff) << std::endl;
+
+
+        for (const auto& byte : packet.packetContent) {
+            // std::cout << std::hex << static_cast<int>(byte) << " ";
+        }
 
         std::cout << std::dec << std::endl << std::endl;
     }
-
     return 0;
 }
