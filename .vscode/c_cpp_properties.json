@@ -7,8 +7,10 @@
                 "C:\\Users\\Alex\\AppData\\Local\\node-gyp\\Cache\\18.15.0\\include\\node",
                 "C:/dev/vcpkg/packages/libpcap_x86-windows/debug/lib",
                 "C:/dev/vcpkg/packages/libpcap_x86-windows/include",
+                "C:/Users/Alex/Desktop/Minishark/Headers",
                 "C:/Users/Alex/Desktop/libpcap",
-                "C:/Users/Alex/Desktop/libpcap/pcap"
+                "C:/Users/Alex/Desktop/libpcap/pcap",
+                "${workspaceFolder}/Headers"
             ],
             "defines": [
                 "_DEBUG",
