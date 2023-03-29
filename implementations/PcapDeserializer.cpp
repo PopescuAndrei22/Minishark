@@ -169,6 +169,7 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
             parseFrontEnd.sourceIP = sourceIP;
             parseFrontEnd.destinationIP = destinationIP;
             parseFrontEnd.protocol = protocolName;
+            parseFrontEnd.info = informations;
             parseFrontEnd.timeElapsed = 0.0; // to modify here
 
             frontEndData.push_back(parseFrontEnd);

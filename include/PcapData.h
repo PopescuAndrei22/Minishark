@@ -43,7 +43,20 @@ public:
     PacketRecord getPacketRecord() const;
     FrontEndData getFrontEndData() const;
 
+    // getters FrontEndData
+    uint32_t getIndex() const;
+    Elapsed getTimeElapsed() const;
+    std::string getSourceIP() const;
+    std::string getDestinationIP() const;
+    std::string getProtocol() const;
+    std::string getInfo() const;
+
+    // getters PacketRecord
+    Seconds getSeconds() const;
+    Microseconds getMicroseconds() const;
+    uint32_t getCapturedPacketLength() const;
     uint32_t getOriginalPacketLength() const;
+    std::vector<uint8_t> getPacketContent() const;
 
     // constructors
     PcapData();
