@@ -7,347 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minishark</title>
     <link rel="stylesheet" href="main.css">
+    <script src="scripts.js"></script>
 </head>
 
 <body>
 
     <div class="table-container">
-        <table>
+        <table id="printDataTable">
             <thead>
                 <tr>
+                    <th>Index</th>
                     <th>Time</th>
-                    <th>Source</th>
                     <th>Destination</th>
+                    <th>Source</th>
                     <th>Protocol</th>
                     <th>Length</th>
                     <th>Info</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>192.168.1.1</td>
-                    <td>192.168.1.1</td>
-                    <td>192.168.1.2</td>
-                    <td>TCP</td>
-                    <td>42</td>
-                    <td>Syn</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
-                <tr>
-                    <td>0.100000</td>
-                    <td>192.168.1.2</td>
-                    <td>192.168.1.1</td>
-                    <td>TCP</td>
-                    <td>66</td>
-                    <td>Syn, Ack</td>
-                </tr>
+
             </tbody>
         </table>
     </div>
 
     <div class="table-details">
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
     </div>
 
     <div class="table-details" style="margin-left:50%">
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-testInfo-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
-        <p>Info-test</p>
     </div>
-
-    <script src="scripts.js"></script>
 
 </body>
 

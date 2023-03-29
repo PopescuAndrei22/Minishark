@@ -27,54 +27,55 @@
     }                                                             \
   } while (0)
 
-std::vector<std::string> getStrings() {
-  std::vector<std::string> strings;
-  strings.push_back("string 1");
-  strings.push_back("string 2");
-  strings.push_back("string 3");
-  return strings;
-}
-
 napi_value Operations(napi_env env, napi_callback_info info)
 {
   PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
 
-  std::vector <PcapData> pcapParsedData = ob.getPcapInformations();
+  std::vector<PcapData> pcapParsedData = ob.getPcapInformations();
 
   // if pcapParsedData.size == 0, use try catch to solve this
-
-  size_t argc = 0;
-  std::vector<std::string> strings = getStrings();
+  
   std::vector<napi_value> objectValues;
   napi_value output;
 
-  std::uint32_t index = pcapParsedData[0].getIndex();
-  std::string destinationIP = pcapParsedData[0].getDestinationIP();
-  std::string sourceIP = pcapParsedData[0].getSourceIP();
-  std::string protocol = pcapParsedData[0].getProtocol();
-  std::string infoData = pcapParsedData[0].getInfo();
+  for (int i = 0; i < pcapParsedData.size(); i++)
+  {
+    // Frontend Data
+    std::uint32_t index = pcapParsedData[i].getIndex();
+    double timeElapsed = pcapParsedData[i].getTimeElapsed();
+    std::string destinationIP = pcapParsedData[i].getDestinationIP();
+    std::string sourceIP = pcapParsedData[i].getSourceIP();
+    std::string protocol = pcapParsedData[i].getProtocol();
+    std::string infoData = pcapParsedData[i].getInfo();
 
-  napi_value obj;
-  napi_create_object(env,&obj);
+    napi_value obj;
+    napi_create_object(env, &obj);
 
-  napi_value napiDestinationIP,napiSourceIP,napiProtocol,napiInfoData,napiIndex;
+    napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed;
 
-  NAPI_CALL(env,napi_create_string_utf8(env, destinationIP.c_str(), destinationIP.length(), &napiDestinationIP));
-  NAPI_CALL(env,napi_create_string_utf8(env, sourceIP.c_str(), sourceIP.length(), &napiSourceIP));
-  NAPI_CALL(env,napi_create_string_utf8(env, protocol.c_str(), protocol.length(), &napiProtocol));
-  NAPI_CALL(env,napi_create_string_utf8(env, infoData.c_str(), infoData.length(), &napiInfoData));
+    // NAPI for frontend data
+    NAPI_CALL(env, napi_create_uint32(env, index, &napiIndex));
+    NAPI_CALL(env, napi_create_double(env, timeElapsed, &napiTimeElapsed));
+    NAPI_CALL(env, napi_create_string_utf8(env, destinationIP.c_str(), destinationIP.length(), &napiDestinationIP));
+    NAPI_CALL(env, napi_create_string_utf8(env, sourceIP.c_str(), sourceIP.length(), &napiSourceIP));
+    NAPI_CALL(env, napi_create_string_utf8(env, protocol.c_str(), protocol.length(), &napiProtocol));
+    NAPI_CALL(env, napi_create_string_utf8(env, infoData.c_str(), infoData.length(), &napiInfoData));
 
-  NAPI_CALL(env, napi_set_named_property(env, obj, "destinationIP", napiDestinationIP));
-  NAPI_CALL(env, napi_set_named_property(env, obj, "sourceIP", napiSourceIP));
-  NAPI_CALL(env, napi_set_named_property(env, obj, "protocol", napiProtocol));
-  NAPI_CALL(env, napi_set_named_property(env, obj, "infoData", napiInfoData));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "index", napiIndex));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "timeElapsed", napiTimeElapsed));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "destinationIP", napiDestinationIP));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "sourceIP", napiSourceIP));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "protocol", napiProtocol));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "infoData", napiInfoData));
 
-  objectValues.push_back(obj);
+    objectValues.push_back(obj);
+  }
 
-  NAPI_CALL(env,napi_create_array_with_length(env, objectValues.size(), &output));
+  NAPI_CALL(env, napi_create_array_with_length(env, objectValues.size(), &output));
 
-  for (size_t i = 0; i < objectValues.size(); i++) {
-    NAPI_CALL(env,napi_set_element(env, output, i, objectValues[i]));
+  for (size_t i = 0; i < objectValues.size(); i++)
+  {
+    NAPI_CALL(env, napi_set_element(env, output, i, objectValues[i]));
   }
 
   return output;

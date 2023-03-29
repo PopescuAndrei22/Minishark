@@ -19,14 +19,12 @@ function createWindow(){
     win.loadFile('src/index.html');
 }
 
-console.log(getPcapData());
-
 app.whenReady().then(() => {
     createWindow();
-  
-    // ipcMain.handle('operations', async (event, num1, num2, num3) => {
-    //     return getOperation(num1,num2,num3);
-    //   });
+
+    ipcMain.handle('getPcapData', async (event) => {
+        return getPcapData();
+      });
  });
   
 app.on('window-all-closed', () => {
