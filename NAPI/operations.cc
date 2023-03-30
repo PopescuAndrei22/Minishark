@@ -29,7 +29,7 @@
 
 napi_value Operations(napi_env env, napi_callback_info info)
 {
-  PcapDeserializer ob("C:/Users/Alex/Desktop/Minishark/Records3.pcap");
+  PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
 
   std::vector<PcapData> pcapParsedData = ob.getPcapInformations();
 
