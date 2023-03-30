@@ -30,7 +30,7 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
 
             // Construct the "Info" field
             std::ostringstream oss;
-            oss << "TCP " << srcPort << " > " << dstPort;
+            oss << "TCP " << srcPort << " → " << dstPort;
             if (flags & 0x02) oss << " [SYN]";
             if (flags & 0x10) oss << " [ACK]";
             if (flags & 0x01) oss << " [FIN]";
@@ -43,7 +43,7 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
 
             // Construct the "Info" field
             std::ostringstream oss;
-            oss << "UDP " << srcPort << " > " << dstPort;
+            oss << "UDP " << srcPort << " → " << dstPort;
             info = oss.str();
         }
     else if (protocol == 1)     // ICMP
@@ -165,12 +165,13 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
 
             informations = this->getInfo(packet);
 
+
             parseFrontEnd.index = counter;
             parseFrontEnd.sourceIP = sourceIP;
             parseFrontEnd.destinationIP = destinationIP;
             parseFrontEnd.protocol = protocolName;
             parseFrontEnd.info = informations;
-            parseFrontEnd.timeElapsed = 0.0; // to modify here
+            parseFrontEnd.timeElapsed = (packet.seconds + packet.microseconds / 1000000.0) - (packets[0].seconds + packets[0].microseconds / 1000000.0);
 
             frontEndData.push_back(parseFrontEnd);
 

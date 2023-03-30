@@ -16,7 +16,7 @@ window.onload = function() {
       row.insertCell().textContent = obj.destinationIP;
       row.insertCell().textContent = obj.sourceIP;
       row.insertCell().textContent = obj.protocol;
-      row.insertCell().textContent = "toFillLater";
+      row.insertCell().textContent = obj.originalPacketLength;
       row.insertCell().textContent = obj.infoData;
     });
   }

@@ -29,7 +29,7 @@
 
 napi_value Operations(napi_env env, napi_callback_info info)
 {
-  PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
+  PcapDeserializer ob("C:/Users/Alex/Desktop/Minishark/Records3.pcap");
 
   std::vector<PcapData> pcapParsedData = ob.getPcapInformations();
 
@@ -48,10 +48,25 @@ napi_value Operations(napi_env env, napi_callback_info info)
     std::string protocol = pcapParsedData[i].getProtocol();
     std::string infoData = pcapParsedData[i].getInfo();
 
+    //Packet record
+
+    std::uint32_t originalPacketLength = pcapParsedData[i].getOriginalPacketLength();
+
     napi_value obj;
     napi_create_object(env, &obj);
 
+    //NAPI variables for frontend data
+
     napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed;
+
+    //NAPI variables for packet record
+
+    napi_value napiOriginalPacketLength;
+
+    //NAPI for packet record
+    NAPI_CALL(env, napi_create_uint32(env, originalPacketLength, &napiOriginalPacketLength));
+
+    NAPI_CALL(env, napi_set_named_property(env, obj, "originalPacketLength", napiOriginalPacketLength));
 
     // NAPI for frontend data
     NAPI_CALL(env, napi_create_uint32(env, index, &napiIndex));
