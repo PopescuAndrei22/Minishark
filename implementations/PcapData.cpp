@@ -53,6 +53,16 @@ std::string PcapData::getInfo() const
     return this->frontEndData.info;
 }
 
+std::string PcapData::getReadableString() const 
+{
+    return this->frontEndData.readableString;
+}
+
+std::string PcapData::getHexValues() const 
+{
+    return this->frontEndData.hexValues;
+}
+
 // getters Packet Record
 Seconds PcapData::getSeconds() const 
 {

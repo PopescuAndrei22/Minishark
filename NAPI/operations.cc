@@ -48,6 +48,9 @@ napi_value Operations(napi_env env, napi_callback_info info)
     std::string protocol = pcapParsedData[i].getProtocol();
     std::string infoData = pcapParsedData[i].getInfo();
 
+    std::string readableString = pcapParsedData[i].getReadableString();
+    std::string hexValues = pcapParsedData[i].getHexValues();
+
     //Packet record
 
     std::uint32_t originalPacketLength = pcapParsedData[i].getOriginalPacketLength();
@@ -57,7 +60,7 @@ napi_value Operations(napi_env env, napi_callback_info info)
 
     //NAPI variables for frontend data
 
-    napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed;
+    napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed, napiHexValues, napiReadableString;
 
     //NAPI variables for packet record
 
@@ -75,6 +78,8 @@ napi_value Operations(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_create_string_utf8(env, sourceIP.c_str(), sourceIP.length(), &napiSourceIP));
     NAPI_CALL(env, napi_create_string_utf8(env, protocol.c_str(), protocol.length(), &napiProtocol));
     NAPI_CALL(env, napi_create_string_utf8(env, infoData.c_str(), infoData.length(), &napiInfoData));
+    NAPI_CALL(env, napi_create_string_utf8(env, hexValues.c_str(), hexValues.length(), &napiHexValues));
+    NAPI_CALL(env, napi_create_string_utf8(env, readableString.c_str(), readableString.length(), &napiReadableString));
 
     NAPI_CALL(env, napi_set_named_property(env, obj, "index", napiIndex));
     NAPI_CALL(env, napi_set_named_property(env, obj, "timeElapsed", napiTimeElapsed));
@@ -82,6 +87,8 @@ napi_value Operations(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_set_named_property(env, obj, "sourceIP", napiSourceIP));
     NAPI_CALL(env, napi_set_named_property(env, obj, "protocol", napiProtocol));
     NAPI_CALL(env, napi_set_named_property(env, obj, "infoData", napiInfoData));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "hexValues", napiHexValues));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "readableString", napiReadableString));
 
     objectValues.push_back(obj);
   }

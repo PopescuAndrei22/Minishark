@@ -147,6 +147,7 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
             std::cout << "Packet Content: ";
             */
 
+            // front end data
             std::string destinationIP, sourceIP, protocolName, informations;
 
             uint32_t srcIp = (packet.packetContent[26] << 24) | (packet.packetContent[27] << 16) | (packet.packetContent[28] << 8) | packet.packetContent[29];
@@ -161,10 +162,11 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
             oss <<((dstIp >> 24) & 0xff) << "." << ((dstIp >> 16) & 0xff) << "." << ((dstIp >> 8) & 0xff) << "." << (dstIp & 0xff);
             destinationIP = oss.str();
 
+            oss.str("");
+
             protocolName = this->getProtocolName(packet.packetContent[23]);
 
             informations = this->getInfo(packet);
-
 
             parseFrontEnd.index = counter;
             parseFrontEnd.sourceIP = sourceIP;
@@ -173,8 +175,6 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
             parseFrontEnd.info = informations;
             parseFrontEnd.timeElapsed = (packet.seconds + packet.microseconds / 1000000.0) - (packets[0].seconds + packets[0].microseconds / 1000000.0);
 
-            frontEndData.push_back(parseFrontEnd);
-
             /*
             std::cout << "Source IP: " << sourceIP << '\n';
             std::cout << "Destination IP: " << destinationIP << '\n';
@@ -182,15 +182,41 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
             std::cout << "Info: " << informations << '\n';
             std::cout<<'\n';
             */
+            
+            std::string readableString;
 
-            /*
+            for (const auto& byte : packet.packetContent)
+            {
+
+                 oss << std::hex << static_cast<int>(byte) << " ";
+
+                if (std::isprint(byte))
+                {
+                    readableString += byte;
+                }
+                else
+                {
+                    readableString += '.';
+                }
+            }
+
+            std::string hexString = oss.str();
+
+            oss.str("");
+
+            parseFrontEnd.readableString = readableString;
+            parseFrontEnd.hexValues = hexString;
+
+           /*
                 for (const auto& byte : packet.packetContent)
                     {
                         std::cout << std::hex << static_cast<int>(byte) << " ";
                     }
 
                 std::cout << std::dec << std::endl << std::endl;
-                */
+            */
+
+            frontEndData.push_back(parseFrontEnd);
 
             counter++;
         }

@@ -18,12 +18,17 @@ struct PacketRecord
 
 struct FrontEndData
 {
+    // informations shown in table
     uint32_t index;
     Elapsed timeElapsed;
     std::string sourceIP;
     std::string destinationIP;
     std::string protocol;
     std::string info;
+
+    // informations about hex values of the packet content
+    std::string readableString;
+    std::string hexValues;
 };
 
 class PcapData
@@ -50,6 +55,8 @@ public:
     std::string getDestinationIP() const;
     std::string getProtocol() const;
     std::string getInfo() const;
+    std::string getReadableString() const;
+    std::string getHexValues() const;
 
     // getters PacketRecord
     Seconds getSeconds() const;
