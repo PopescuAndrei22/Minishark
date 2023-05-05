@@ -58,16 +58,8 @@ function displayInfoData(hexValues, readableString, currentID, event) {
     event.currentTarget.classList.add("selected-row");
   }
 }
-
-function check()
-{
-  const fileInput = document.getElementById("file-upload");
-    const filePath = fileInput.files[0].path;
-
-    console.log(filePath);
-}
   function submitForm() {
-    const fileInput = document.getElementById("myfile");
+    const fileInput = document.getElementById("file-upload");
     const filePath = fileInput.files[0].path;
   
     addTab(filePath);
@@ -97,10 +89,17 @@ function check()
   
     const tableContainer = document.createElement('div');
     tableContainer.innerHTML = `
-    <form>
-    <label for="myfile">Select a file:</label>
-    <input type="file" id="myfile" name="myfile"><br><br>
-    <input class="add-tab-btn" type="button" value="Submit" onclick="submitForm()">
+    <form id="file-upload-form" class="uploader" style="text-align: center;">
+    <input id="file-upload" type="file" name="fileUpload"/>
+    <input class="btn btn-primary" type="button" value="Submit" onclick="submitForm()">
+  
+    <label for="file-upload" id="file-drag">
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div id="select-file-name">Select a file or drag here</div>
+        <span id="file-upload-btn" class="btn btn-primary" onclick="getFileName()">Select a file</span>
+      </div>
+    </label>
   </form>
 `;
 
@@ -123,7 +122,7 @@ tabContent[0] = tableContainer;
   
     // create tab title and set its text
     const tabTitle = document.createElement('span');
-    tabTitle.textContent = `Tab ${tabCounter}`;
+    tabTitle.textContent = filePath.split('\\').pop();
   
     // create close button for the tab
     const closeButton = document.createElement('span');

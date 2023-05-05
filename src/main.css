@@ -3,6 +3,8 @@
     padding:0;
     box-sizing:border-box;
     font-family: sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 
  body {
@@ -14,7 +16,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     font-family: Arial, sans-serif;
-    font-size: 12px;
 }
 
 th, td {
