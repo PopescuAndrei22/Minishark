@@ -36,7 +36,8 @@ th {
     background-color: rgb(116, 0, 25);
     color: white;
     position: sticky;
-    top: 0;
+    top: -1px;
+    border: 1px solid white;
 }
 
 .selected-row {
@@ -44,15 +45,16 @@ th {
   }
   
 .table-container {
-    height: 50vh; /* set the height of the container */
+    top: 1vh;
+    height: 47.5vh; /* set the height of the container */
     overflow: auto;
-    border: 1px solid rgb(187, 225, 250);
+    border: none;
 }
 
 .table-details {
     padding: 8px;
     position: absolute; /* position relative to the nearest positioned ancestor */
-    top: 50%; /* start at 50% page height */
+    top: 50vh; /* start at 50% page height */
     height: 50%; /* limit the height to 50% page height */
     width: 50%; /* set the width to full page width */
     overflow-x: auto; /* enable horizontal scrollbar if content exceeds width */
@@ -63,13 +65,51 @@ th {
 .table-content-details {
     padding: 20px;
     position: absolute; /*position relative to the nearest positioned ancestor */
-    top: 50%; /* start at 50% page height */
+    top: 50vh; /* start at 50% page height */
     height: 50%; /* limit the height to 50% page height */
     width: 25%; /* set the width to full page width */
     overflow-y: auto; /* add vertical scrollbar */ /* enable horizontal scrollbar if content exceeds width */
     word-wrap: break-word;
     border: 1px solid rgb(187, 225, 250);
 }
+
+/* styling tab start */
+.tab-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tab-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.tab-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+.tab-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.tab-list {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.tab {
+  display: inline-block;
+  padding: 0.2vh 50px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.tab.active {
+  background-color: #ddd;
+}
+/*styling tab end */
 
 /* styling crossbar */
 ::-webkit-scrollbar {

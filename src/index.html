@@ -6,12 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minishark</title>
+    
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="uploadFile.css">
+
+    
     <script src="scripts.js"></script>
+    <script src="uploadFile.js"></script>
+
 </head>
 
 <body>
 
+    <!-- <form>
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+        <input class="add-tab-btn" type="button" value="Submit" onclick="submitForm()">
+      </form>  -->
+
+    <div class="tab-container">
+    <div class="tab-list"></div>
+    </div>
+
+    <div id="classic"></div>
+
+      <!-- Upload  -->
+<form id="file-upload-form" class="uploader" style="text-align: center;">
+    <input id="file-upload" type="file" name="fileUpload"/>
+    <input class="btn btn-primary" type="button" value="Submit" onclick="check()">
+  
+    <label for="file-upload" id="file-drag">
+      <div id="start">
+        <i class="fa fa-download" aria-hidden="true"></i>
+        <div>Select a file or drag here</div>
+        <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+      </div>
+    </label>
+  </form>
+<!--
     <div class="table-container">
         <table id="printDataTable">
             <thead>
@@ -38,7 +70,7 @@
     </div>
 
     <div class="table-content-details" id="readableString" style="margin-left:75%;">
-    </div>
+    </div> -->
 
 </body>
 

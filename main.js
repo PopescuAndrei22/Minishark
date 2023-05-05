@@ -22,9 +22,9 @@ function createWindow(){
 app.whenReady().then(() => {
     createWindow();
 
-    ipcMain.handle('getPcapData', async (event) => {
-        return getPcapData();
-      });
+    ipcMain.handle('getPcapData', async (event, filePath) => {
+        return getPcapData(filePath);
+    });
  });
   
 app.on('window-all-closed', () => {

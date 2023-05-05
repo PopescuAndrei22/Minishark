@@ -29,7 +29,21 @@
 
 napi_value Operations(napi_env env, napi_callback_info info)
 {
-  PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
+  size_t argc = 1;
+  napi_value args[1];
+  std::string filePath;
+  
+  // Get the value of the first argument passed to the function
+  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+
+  // Convert the value to a C++ string
+  size_t str_size;
+  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], NULL, 0, &str_size));
+  filePath.resize(str_size);
+  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], &filePath[0], str_size + 1, NULL));
+
+  PcapDeserializer ob(filePath);
+  //PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
 
   std::vector<PcapData> pcapParsedData = ob.getPcapInformations();
 
