@@ -89,6 +89,7 @@ function displayInfoData(hexValues, readableString, currentID, event) {
   
     const tableContainer = document.createElement('div');
     tableContainer.innerHTML = `
+    <div>
     <form id="file-upload-form" class="uploader" style="text-align: center;">
     <input id="file-upload" type="file" name="fileUpload"/>
     <input class="btn btn-primary" type="button" value="Submit" onclick="submitForm()">
@@ -101,6 +102,24 @@ function displayInfoData(hexValues, readableString, currentID, event) {
       </div>
     </label>
   </form>
+  </div>
+
+  <div style="clear: both;"></div>
+
+<div class="theme-container">
+  <h1 class="custom-title">Pick the desired theme</h1>
+<div class="theme-switcher">
+  <button class="theme-button gradient-crimson">Blood Crimson</button>
+  <button class="theme-button gradient-azure">Crystal Azure</button>
+  <button class="theme-button gradient-orange" onclick="changeThemeOrange()">Sunset Orange</button>
+  <button class="theme-button gradient-green">Jade Green</button>
+</div>
+
+<div class="theme-switcher">
+<button class="theme-button gradient">Customize</button>
+</div>
+
+</div>
 `;
 
 tabContent[0] = tableContainer;

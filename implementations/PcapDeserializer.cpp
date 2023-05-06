@@ -28,23 +28,73 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
             uint16_t dstPort = (packet.packetContent[36] << 8) | packet.packetContent[37];
             uint8_t flags = packet.packetContent[47];
 
-            // Construct the "Info" field
-            std::ostringstream oss;
-            oss << "TCP " << srcPort << " → " << dstPort;
-            if (flags & 0x02) oss << " [SYN]";
-            if (flags & 0x10) oss << " [ACK]";
-            if (flags & 0x01) oss << " [FIN]";
-            info = oss.str();
+            if (srcPort == 53 || dstPort == 53)
+                {
+                    // DNS is encapsulated in TCP
+
+                    // Extract the TCP header length from the TCP header
+                    uint8_t tcpHeaderLength = (packet.packetContent[46] >> 4) * 4;
+
+                    // Extract DNS information from the packet payload
+                    // Start by skipping the TCP and IP headers
+                    uint8_t* dnsPayload = const_cast<uint8_t*>(&packet.packetContent[14 + tcpHeaderLength]); // Assuming Ethernet header length of 14 bytes
+
+                    // Extract the query ID from the DNS packet header
+                    uint16_t queryId = (dnsPayload[0] << 8) | dnsPayload[1];
+
+                    // Perform DNS packet parsing and extraction
+                    // Extract other DNS fields such as flags, etc.
+
+                    // Construct the "Info" field
+                    std::ostringstream oss;
+                    oss << "DNS (TCP) - Query ID: " << queryId << ", Flags: " << flags;
+                    info = oss.str();
+                }
+                else
+                {
+                    // Construct the "Info" field
+                    std::ostringstream oss;
+                    oss << "TCP " << srcPort << " → " << dstPort;
+                    if (flags & 0x02) oss << " [SYN]";
+                    if (flags & 0x10) oss << " [ACK]";
+                    if (flags & 0x01) oss << " [FIN]";
+                    info = oss.str();
+                }
         }
     else if (protocol == 17)     // UDP
         {
             uint16_t srcPort = (packet.packetContent[34] << 8) | packet.packetContent[35];
             uint16_t dstPort = (packet.packetContent[36] << 8) | packet.packetContent[37];
 
-            // Construct the "Info" field
-            std::ostringstream oss;
-            oss << "UDP " << srcPort << " → " << dstPort;
-            info = oss.str();
+            if (srcPort == 53 || dstPort == 53)
+            {
+                // DNS is encapsulated in UDP
+
+                // Extract DNS information from the packet payload
+                // Start by skipping the UDP and IP headers
+                uint8_t* dnsPayload = const_cast<uint8_t*>(&packet.packetContent[14 + 8]); // Assuming Ethernet header length of 14 bytes and UDP header length of 8 bytes
+
+                // Extract the query ID from the DNS packet header
+                uint16_t queryId = (dnsPayload[0] << 8) | dnsPayload[1];
+
+                // Extract the flags from the DNS packet header
+                uint16_t flags = (dnsPayload[2] << 8) | dnsPayload[3];
+
+                // Perform DNS packet parsing and extraction
+                // Extract other DNS fields as needed
+
+                // Construct the "Info" field
+                std::ostringstream oss;
+                oss << "DNS (UDP) - Query ID: " << queryId << ", Flags: " << flags;
+                info = oss.str();
+            }
+            else
+            {
+                // Construct the "Info" field
+                std::ostringstream oss;
+                oss << "UDP " << srcPort << " → " << dstPort;
+                info = oss.str();
+            }
         }
     else if (protocol == 1)     // ICMP
         {
@@ -56,10 +106,32 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
             oss << "ICMP type " << static_cast<int>(type) << " code " << static_cast<int>(code);
             info = oss.str();
         }
+    else if (protocol == 88)    // ICMPv6
+    {
+        uint8_t type = packet.packetContent[34];
+        uint8_t code = packet.packetContent[35];
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "ICMPv6 type " << static_cast<int>(type) << " code " << static_cast<int>(code);
+        info = oss.str();
+    }
+    else if (protocol == 53)    // DNS
+    {
+        // Extract DNS information from the packet
+        uint16_t queryId = (packet.packetContent[34] << 8) | packet.packetContent[35];
+        uint16_t flags = (packet.packetContent[36] << 8) | packet.packetContent[37];
+        // Extract other DNS fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "DNS - Query ID: " << queryId << ", Flags: " << flags;
+        info = oss.str();
+    }
     else
         {
             // For other protocols, include the protocol name
-            std::string protocolName = getProtocolName(protocol);
+            std::string protocolName = getProtocolName(packet);
 
             // Construct the "Info" field
             std::ostringstream oss;
@@ -71,17 +143,48 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
 }
 
 // function to get the protocol name based on int value
-std::string PcapDeserializer::getProtocolName(uint8_t protocol) const
+std::string PcapDeserializer::getProtocolName(const PacketRecord& packet) const
 {
+    uint8_t protocol = packet.packetContent[23];
+
+    uint16_t srcPort = (packet.packetContent[34] << 8) | packet.packetContent[35];
+    uint16_t dstPort = (packet.packetContent[36] << 8) | packet.packetContent[37];
+
     static const std::unordered_map<uint8_t, std::string> protocolMap
     {
         { 1, "ICMP" },
         { 6, "TCP" },
         { 17, "UDP" },
+        { 88, "ICMPv6" },
+        { 50, "ESP" },
+        { 53, "DNS" },
+        { 123, "NTP" },
+        { 138, "NetBIOS" },
+        { 139, "NetBIOS" },
+        { 161, "SNMP" },
+        { 162, "SNMP" },
+        { 194, "IRC" },
         // Add more protocol mappings here as needed
-
-        /* i will get these protocols from a file later */
     };
+
+    if(protocol == 6 || protocol == 17)
+    {
+        for (const auto& entry : protocolMap) {
+            uint8_t protocolNumber = entry.first;
+            std::string protocolName = entry.second;
+            
+            // Process the key-value pair
+
+            if(srcPort == (static_cast<int>(protocolNumber)) || dstPort == (static_cast<int>(protocolNumber)))
+            {
+                return protocolName;
+            }
+        }
+        // if(srcPort == 53 || dstPort == 53)
+        // {
+        //     return "DNS";
+        // }
+    }
 
     auto it = protocolMap.find(protocol);
     if (it != protocolMap.end())
@@ -164,7 +267,7 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
 
             oss.str("");
 
-            protocolName = this->getProtocolName(packet.packetContent[23]);
+            protocolName = this->getProtocolName(packet);
 
             informations = this->getInfo(packet);
 

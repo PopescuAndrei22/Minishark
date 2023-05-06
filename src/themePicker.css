@@ -1,0 +1,43 @@
+.theme-container {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.35);
+    padding: 3rem 4rem;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+  }
+
+  .custom-title
+  {
+    color:rgb(71, 6, 102);
+
+    font-size: 35px;
+
+    padding: 30px;
+
+    margin-left: 10%;
+    margin-right: 10%;
+
+    border: 1px solid white;
+  }
+
+  .theme-switcher {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.312rem;
+  }
+
+  .theme-button {
+
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .theme-button:hover{
+    border: 2px solid yellow;
+  }

@@ -7,6 +7,7 @@
   width: 100%;
   max-width: 600px;
 }
+
 .uploader label {
   float: left;
   clear: both;
@@ -33,14 +34,7 @@
   transform: scale(0.8);
   opacity: 0.3;
 }
-.uploader #start {
-  float: left;
-  clear: both;
-  width: 100%;
-}
-.uploader #start.hidden {
-  display: none;
-}
+
 .uploader #start i.fa {
   font-size: 50px;
   margin-bottom: 1rem;
@@ -85,14 +79,6 @@
   background: #454cad;
   border-color: #454cad;
   cursor: pointer;
-}
-
-.custom-file-upload {
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 4px;
 }
 
 #file-name {

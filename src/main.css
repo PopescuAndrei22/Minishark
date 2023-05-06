@@ -7,9 +7,19 @@
     text-align: center;
 }
 
+:root {
+  --color-background: rgb(7, 7, 65);
+  --color-text: rgb(138, 6, 6);
+  --color-table-hover: rgb(185, 26, 159);
+  --color-table-header: rgb(116, 0, 25);
+  --color-table-selected-row: rgb(69, 4, 189);
+  --color-tab: rgb(135, 182, 27);
+  --color-tab-active: rgb(163, 119, 243);
+}
+
  body {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 0, 0);
+    background-color: var(--color-background);
+    color: var(--color-text);
 } 
 
 table {
@@ -26,7 +36,7 @@ th, td {
 }
 
 th:hover,tr:hover{
-    background-color: #99004d;
+    background-color: var(--color-table-hover);
 }
 
 /* tr:nth-child(even) {
@@ -34,7 +44,7 @@ th:hover,tr:hover{
 } */
 
 th {
-    background-color: rgb(116, 0, 25);
+    background-color: var(--color-table-header);
     color: white;
     position: sticky;
     top: -1px;
@@ -42,7 +52,7 @@ th {
 }
 
 .selected-row {
-    background-color: #4a1f7c;
+    background-color: var(--color-table-selected-row);
   }
   
 .table-container {
@@ -103,16 +113,16 @@ th {
 .tab {
   display: inline-block;
   padding: 0.2vh 50px;
-  background-color: #f1f1f1;
+  background-color: var(--color-tab);
   cursor: pointer;
 }
 
 .tab.active {
-  background-color: #ddd;
+  background-color: var(--color-tab-active);
 }
 /*styling tab end */
 
-/* styling crossbar */
+/* styling scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
   }
@@ -152,25 +162,3 @@ th {
   ::-ms-scrollbar-thumb:hover {
     opacity: 1; /* Set the opacity to 1 on hover */
   }
-
-/* gradient - start */
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
-
-.gradient {
-    background: linear-gradient(-45deg, rgb(45, 39, 39), rgb(65, 53, 67), rgb(143, 67, 238), rgb(240, 235, 141));
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite; /* updated line */
-}
-/* gradient - end */

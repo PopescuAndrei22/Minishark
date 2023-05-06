@@ -14,7 +14,7 @@ private:
 
 public:
     // getters
-    std::string getProtocolName(uint8_t) const;
+    std::string getProtocolName(const PacketRecord&) const;
     std::string getInfo(const PacketRecord&) const;
     std::vector<PcapData> getPcapInformations() const;
 
