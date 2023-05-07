@@ -6,6 +6,7 @@ let tabFilePath = {};
 
 window.onload = function() {
     createHomeTab();
+    initializeThemeButtons();
     //myFunction("text");
   };
   
@@ -40,10 +41,10 @@ function displayInfoData(hexValues, readableString, currentID, event) {
 
   // i had .textContent before
   hexField.innerHTML =
-    "<h2 style='color: #800040;font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details</h2>" +
+    "<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details</h2>" +
     hexValues;
   readableField.innerHTML =
-    "<h2 style='color: #800040; font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details in readable format</h2>" +
+    "<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details in readable format</h2>" +
     readableString;
 
   // Check if the event parameter is defined
@@ -109,14 +110,15 @@ function displayInfoData(hexValues, readableString, currentID, event) {
 <div class="theme-container">
   <h1 class="custom-title">Pick the desired theme</h1>
 <div class="theme-switcher">
-  <button class="theme-button gradient-crimson">Blood Crimson</button>
-  <button class="theme-button gradient-azure">Crystal Azure</button>
-  <button class="theme-button gradient-orange" onclick="changeThemeOrange()">Sunset Orange</button>
-  <button class="theme-button gradient-green">Jade Green</button>
+  <button data-theme="crimson" class="theme-button gradient-crimson" aria-pressed="false">Crimson Heart</button>
+  <button data-theme="azure" class="theme-button gradient-azure" aria-pressed="false">Crystal Azure</button>
+  <button data-theme="orange" class="theme-button gradient-orange" aria-pressed="false">Sunset Orange</button>
+  <button data-theme="green" class="theme-button gradient-green" aria-pressed="false">Jade Green</button>
 </div>
 
 <div class="theme-switcher">
-<button class="theme-button gradient">Customize</button>
+<button data-theme="default" class="theme-button gradient" aria-pressed="false">Default</button>
+<button class="theme-button-customize gradient" onclick='openSmallWindow()'>Customize</button>
 </div>
 
 </div>
@@ -236,6 +238,10 @@ tabFilePath[tabCounter] = filePath;
     if(tabId != 0)
     {
       myFunction(tabFilePath[tabId],tabId);
+    }
+    else
+    {
+      initializeThemeButtons();
     }
   }
   

@@ -32,7 +32,7 @@
 }
 
 .gradient-orange {
-    background: linear-gradient(-45deg, rgb(233, 121, 30), rgb(247, 230, 5), rgb(241, 115, 42), rgb(218, 55, 33));
+    background: linear-gradient(-45deg, rgb(233, 121, 30), rgb(230, 167, 32), rgb(241, 115, 42), rgb(218, 55, 33));
     background-size: 400% 400%;
     animation: gradient 15s ease infinite; /* updated line */
 }
