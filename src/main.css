@@ -102,6 +102,7 @@ th {
   padding: 0;
   margin: 0;
   list-style: none;
+  position: relative;
 }
 
 .tab {
@@ -109,6 +110,9 @@ th {
   padding: 0.2vh 50px;
   background-color: var(--color-tab-global);
   cursor: pointer;
+  border-right: 1px solid #ccc; /* Add right border */
+  border-left: 1px solid #ccc; /* Add left border */
+  position: relative; /* Add position relative */
 }
 
 .tab.active {
@@ -117,6 +121,20 @@ th {
 
 .tab:hover {
   background-color: var(--color-tab-hover-global);
+}
+
+.close-tab {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-top: 2px;
+  cursor: pointer;
+  color: black;
+}
+
+.close-tab:hover {
+  color: red; /* Set the color when hovering */
 }
 /*styling tab end */
 
