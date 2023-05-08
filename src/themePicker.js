@@ -86,7 +86,7 @@ function openSmallWindow() {
   var features = "width=400,height=300,top=100,left=100"; // Specify the dimensions and position of the new window
   var newWindow = window.open("", "_blank", features); // Open the new window
 
-  newWindow.document.title = "Color Picker";
+  newWindow.document.title = "Theme Picker";
 
   // Access the computed styles of the document
   var computedStyles = getComputedStyle(document.documentElement);
@@ -172,7 +172,7 @@ function openSmallWindow() {
   <table>
   <tr>
     <th>Color</th>
-    <th>Text</th>
+    <th>Element</th>
   </tr>
   <tr>
     <td><input type="color" value="${colorText}" oninput="handleColorInputChange('--color-text-global', event)"></td>
