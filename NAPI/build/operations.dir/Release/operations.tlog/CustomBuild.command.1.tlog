@@ -1,0 +1,10 @@
+^C:\USERS\ALEX\DESKTOP\MINISHARK\NAPI\CMAKELISTS.TXT
+setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-file C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

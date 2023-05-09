@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "../include/PcapDeserializer.h"
 #include "../include/PcapData.h"
+#include <pcap.h>
 
 #define NAPI_CALL(env, call)                                      \
   do                                                              \
@@ -27,8 +28,40 @@
     }                                                             \
   } while (0)
 
+// Function to retrieve the available networks for live capture
+void getAvailableNetworks()
+{
+    char errbuf[PCAP_ERRBUF_SIZE];
+
+    // Get the list of available network devices
+    pcap_if_t *alldevs;
+    if (pcap_findalldevs(&alldevs, errbuf) == -1)
+    {
+        fprintf(stderr, "Error finding devices: %s\n", errbuf);
+        return;
+    }
+
+    // Iterate over the list of devices and print their names and descriptions
+    pcap_if_t *device;
+    for (device = alldevs; device != NULL; device = device->next)
+    {
+        printf("Name: %s\n", device->name);
+        if (device->description)
+            printf("Description: %s\n", device->description);
+        else
+            printf("Description: N/A\n");
+
+        printf("\n");
+    }
+
+    // Free the list of devices
+    pcap_freealldevs(alldevs);
+}
+
 napi_value Operations(napi_env env, napi_callback_info info)
 {
+  getAvailableNetworks();
+
   size_t argc = 1;
   napi_value args[1];
   std::string filePath;

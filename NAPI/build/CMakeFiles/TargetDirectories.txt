@@ -1,0 +1,3 @@
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/operations.dir
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/ZERO_CHECK.dir
