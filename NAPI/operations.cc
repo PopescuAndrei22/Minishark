@@ -6,10 +6,7 @@
 #include <iomanip>
 #include "../include/PcapDeserializer.h"
 #include "../include/PcapData.h"
-<<<<<<< HEAD
 #include "../include/LiveCapture.h"
-=======
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
 #include <pcap.h>
 
 #define NAPI_CALL(env, call)                                      \
@@ -33,50 +30,10 @@
     }                                                             \
   } while (0)
 
-<<<<<<< HEAD
+
 napi_value GetInterfaceNames(napi_env env, napi_callback_info info) {
   LiveCapture liveCapture;
   liveCapture.getNetworkInterfaces();
-=======
-// Function to retrieve the available networks for live capture
-void getAvailableNetworks()
-{
-    char errbuf[PCAP_ERRBUF_SIZE];
-
-    // Get the list of available network devices
-    pcap_if_t *alldevs;
-    if (pcap_findalldevs(&alldevs, errbuf) == -1)
-    {
-        fprintf(stderr, "Error finding devices: %s\n", errbuf);
-        return;
-    }
-
-    // Iterate over the list of devices and print their names and descriptions
-    pcap_if_t *device;
-    for (device = alldevs; device != NULL; device = device->next)
-    {
-        printf("Name: %s\n", device->name);
-        if (device->description)
-            printf("Description: %s\n", device->description);
-        else
-            printf("Description: N/A\n");
-
-        printf("\n");
-    }
-
-    // Free the list of devices
-    pcap_freealldevs(alldevs);
-}
-
-napi_value Operations(napi_env env, napi_callback_info info)
-{
-  getAvailableNetworks();
-
-  size_t argc = 1;
-  napi_value args[1];
-  std::string filePath;
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
-  
   std::vector<char*> interfaceNames = liveCapture.getInterfaceNames();
 
   napi_value output;

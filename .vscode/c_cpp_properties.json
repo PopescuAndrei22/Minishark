@@ -4,7 +4,6 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-<<<<<<< HEAD
                 "C:/Users/Andrei/AppData/Local/node-gyp/Cache/18.15.0/include",
                 "C:/Users/Andrei/AppData/Local/node-gyp/Cache/18.15.0/include/node",
                 "D:/GitHub/Minishark/include",
@@ -13,16 +12,6 @@
                 "D:/GitHub/Minishark/NAPI/npcap/Lib",
                 "D:/GitHub/Minishark/NAPI/npcap",
                 "D:/GitHub/Minishark//node_modules/node-addon-api"
-=======
-                "C:/Users/Alex/AppData/Local/node-gyp/Cache/18.15.0/include",
-                "C:/Users/Alex/AppData/Local/node-gyp/Cache/18.15.0/include/node",
-                "C:/Users/Alex/Desktop/Minishark/include",
-                "C:/Users/Alex/Desktop/Minishark/implementations",
-                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Include",
-                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib",
-                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap",
-                "C:/Users/Alex/Desktop/Minishark//node_modules/node-addon-api"
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
             ],
             "defines": [
                 "_DEBUG",
