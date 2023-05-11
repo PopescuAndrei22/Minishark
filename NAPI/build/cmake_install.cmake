@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Install script for directory: D:/GitHub/Minishark/NAPI
-=======
-# Install script for directory: C:/Users/Alex/Desktop/Minishark/NAPI
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
 file(WRITE "D:/GitHub/Minishark/NAPI/build/${CMAKE_INSTALL_MANIFEST}"
-=======
-file(WRITE "C:/Users/Alex/Desktop/Minishark/NAPI/build/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

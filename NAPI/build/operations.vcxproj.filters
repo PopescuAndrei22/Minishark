@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="D:\GitHub\Minishark\NAPI\operations.cc">
@@ -15,37 +14,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\Andrei\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc">
-=======
-<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\NAPI\operations.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapData.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapDeserializer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Alex\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc">
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <CustomBuild Include="D:\GitHub\Minishark\NAPI\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
       <UniqueIdentifier>{3175C1E1-BE69-33EF-9E85-56E07370D3E1}</UniqueIdentifier>
-=======
-    <CustomBuild Include="C:\Users\Alex\Desktop\Minishark\NAPI\CMakeLists.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{E7A56486-5C30-30B5-B8A8-CABE830A501C}</UniqueIdentifier>
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
     </Filter>
   </ItemGroup>
 </Project>

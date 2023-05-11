@@ -2,17 +2,10 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
       <FullPath>D:\GitHub\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
       <FullPath>D:\GitHub\Minishark\NAPI\build\Release\operations.node</FullPath>
-=======
-      <FullPath>C:\Users\Alex\Desktop\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
-    </ProjectOutput>
-    <ProjectOutput>
-      <FullPath>C:\Users\Alex\Desktop\Minishark\NAPI\build\Release\operations.node</FullPath>
->>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
