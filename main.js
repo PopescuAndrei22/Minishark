@@ -22,8 +22,20 @@ function createWindow(){
 app.whenReady().then(() => {
     createWindow();
 
-    ipcMain.handle('getPcapData', async (event, filePath) => {
-        return getPcapData(filePath);
+    // ipcMain.handle('getPcapData', async (event, filePath) => {
+    //     return getPcapData(filePath);
+    // });
+
+    ipcMain.handle('getInterfaceNames', async (event) => {
+        return getPcapData.getInterfaceNames();
+    });
+
+    ipcMain.handle('Operations', async (event, filePath) => {
+        return getPcapData.Operations(filePath);
+    });
+
+    ipcMain.handle('OperationsLiveCapture', async (event, networkInterfaceIndex) => {
+        return getPcapData.OperationsLiveCapture(networkInterfaceIndex);
     });
  });
   

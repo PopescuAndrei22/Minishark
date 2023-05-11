@@ -10,7 +10,11 @@
 class PcapDeserializer
 {
 private:
+    // packets + informations about each packet
     std::vector<PcapData> parsedData;
+
+    std::vector <PacketRecord> packets;
+    std::vector <FrontEndData> frontEndData;
 
 public:
     // getters
@@ -18,20 +22,22 @@ public:
     std::string getInfo(const PacketRecord&) const;
     std::vector<PcapData> getPcapInformations() const;
 
+    void liveCaptureDeserializer(std::vector<PacketRecord>);
+
     // parsing the pcap file to get all the informations needed
     void parseFile(std::string);
 
     // reading the pcap file to get the Packet Record
-    void readFile(std::string,std::vector<PacketRecord>&);
+    void readFile(std::string);
 
     // parsing content from PacketRecord such as destination IP, source IP, protocol and so on
-    void getData(std::vector<PacketRecord>, std::vector<FrontEndData>&);
+    void getData();
 
-    // transfering the data parsed to our vector of type PcapData so we can send it to the front end
-    void transferData(std::vector<PacketRecord>, std::vector<FrontEndData>);
+    // clearing all the data
+    void clearData();
 
     // constructors
-    PcapDeserializer(std::string);
+    PcapDeserializer();
 
     // destructors
     ~PcapDeserializer();

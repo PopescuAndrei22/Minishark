@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\Minishark\NAPI\build\CMakeFiles\d86fc69d86adaccca54c16b60ac26fcd\generate.stamp.rule">
+=======
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\1839f4f2d499e55e9d47c7c61a33e989\generate.stamp.rule">
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+<<<<<<< HEAD
+      <UniqueIdentifier>{F77FA0E3-71A1-3183-847C-8CFEF93BF823}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{D400373A-D1AA-3A5E-9D32-4B9C3BDDBC9C}</UniqueIdentifier>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+    </Filter>
+  </ItemGroup>
+</Project>

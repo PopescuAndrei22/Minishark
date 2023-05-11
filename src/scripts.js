@@ -3,15 +3,62 @@ let tabCounter = 1;
 
 let tabContent = {};
 let tabFilePath = {};
+let isLiveCapture = {};
+
+let activeTabId = null;
+
+let capturedPackets = {};
 
 window.onload = function() {
     createHomeTab();
     initializeThemeButtons();
     //myFunction("text");
   };
+
+  // async function handleInterfacenames()
+  // {
+  //    data = await api.getInterfaceNames();
+
+  //    console.log(data);
+  // }
   
-  async function myFunction(filePath, currentID) {
-    data = await api.getPcapData(filePath);
+  // async function handleLiveCapture()
+  // {
+  //   data = await api.OperationsLiveCapture(7);
+
+  //   console.log(data);
+  // }
+
+  function runLiveCaptureLoop(tabId) {
+    setTimeout(function () {
+      if(tabId != activeTabId)
+      {
+        return;
+      }
+      const classic = document.querySelector('#classic');
+      capturedPackets[tabId] = classic.innerHTML;
+
+      liveCaptureFunction(tabId);
+      runLiveCaptureLoop(tabId); // Recursive call to continue the loop
+    }, 2000);
+  }
+
+  async function parsePcapFile(filePath,currentID)
+  {
+    data = await api.Operations(filePath);
+
+    myFunction(data,currentID);
+  }
+
+  async function liveCaptureFunction(currentID)
+  {
+    data = await api.OperationsLiveCapture(7);
+
+    myFunction(data,currentID);
+  }
+
+  async function myFunction(data, currentID) {
+    // data = await api.Operations(filePath);
     // process the data here
     
     const table = document.getElementById("printDataTable-"+currentID);
@@ -31,7 +78,6 @@ window.onload = function() {
       row.onclick = function(event) {
         displayInfoData(obj.hexValues, obj.readableString, currentID, event);
       }
-
     });
   }
 
@@ -122,6 +168,10 @@ function displayInfoData(hexValues, readableString, currentID, event) {
 </div>
 
 </div>
+
+<div>
+<button onclick="addTabLiveCapture()"> Live Capture </button>
+</div>
 `;
 
 tabContent[0] = tableContainer;
@@ -131,6 +181,90 @@ tabContent[0] = tableContainer;
   
     // activate the new tab
     activateTab({ target: tab });
+  }
+
+  function addTabLiveCapture(){
+    const tabList = document.querySelector('.tab-list');
+  
+    // create new tab and set its class and data attributes
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.setAttribute('data-tab', tabCounter);
+  
+    // create tab title and set its text
+    const tabTitle = document.createElement('span');
+    tabTitle.textContent = "Live Capture";
+  
+    // create close button for the tab
+    const closeButton = document.createElement('span');
+    closeButton.classList.add('close-tab');
+    closeButton.setAttribute('data-tab', tabCounter);
+    closeButton.textContent = '×';
+  
+    // add the title and close button to the tab
+    tab.appendChild(tabTitle);
+    tab.appendChild(closeButton);
+  
+    // add the tab to the tab list
+    tabList.appendChild(tab);
+  
+    const tableContainer = document.createElement('div');
+    tableContainer.innerHTML = `
+    <div class="table-container">
+  <table id="printDataTable-${tabCounter}">
+    <thead>
+      <tr>
+        <th>Index</th>
+        <th>Time</th>
+        <th>Destination</th>
+        <th>Source</th>
+        <th>Protocol</th>
+        <th>Length</th>
+        <th>Info</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+  <div class="table-details"></div>
+
+  <div class="table-content-details" id="hex-${tabCounter}" style="margin-left:50%"></div>
+
+  <div class="table-content-details" id="readableString-${tabCounter}" style="margin-left:75%"></div>
+  </div>
+`;
+
+// add the table container to the classic div
+//const classic = document.querySelector('#classic');
+//classic.appendChild(tableContainer);
+
+//const classic = document.querySelector('#classic');
+
+//classic.innerHTML = "";
+
+//classic.innerHTML = tableContainer;
+
+//myFunction(tabCounter);
+
+tabContent[tabCounter] = tableContainer;
+
+isLiveCapture[tabCounter] = true;
+
+// classic.innerHTML = "";
+
+    // add click event listener to the tab
+    tab.addEventListener('click', activateTab);
+  
+    // add click event listener to the close button
+    closeButton.addEventListener('click', closeTab);
+  
+    // activate the new tab
+    activateTab({ target: tab });
+
+    // increment the tab counter
+    tabCounter++;
   }
 
   function addTab(filePath) {
@@ -202,6 +336,8 @@ tabContent[tabCounter] = tableContainer;
 
 tabFilePath[tabCounter] = filePath;
 
+isLiveCapture[tabCounter] = false;
+
 // classic.innerHTML = "";
 
     // add click event listener to the tab
@@ -231,13 +367,35 @@ tabFilePath[tabCounter] = filePath;
 
     const tabId = tab.getAttribute('data-tab');
 
+    activeTabId = tabId;
+
     const classic = document.querySelector('#classic');
 
     classic.innerHTML = tabContent[tabId].innerHTML;
 
+    if(isLiveCapture[tabId]){
+        if (capturedPackets.hasOwnProperty(tabId)) {
+          classic.innerHTML = capturedPackets[tabId];
+          }
+        else
+        {
+          classic.innerHTML = tabContent[tabId].innerHTML;
+        }
+  }
+
     if(tabId != 0)
     {
-      myFunction(tabFilePath[tabId],tabId);
+      if(isLiveCapture[tabId] === false)
+      {
+        parsePcapFile(tabFilePath[tabId],tabId);
+        // myFunction(tabFilePath[tabId],tabId);
+      }
+      else
+      {
+        runLiveCaptureLoop(tabId);
+      }
+      // handleInterfacenames();
+      // handleLiveCapture();
     }
     else
     {

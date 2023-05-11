@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+D:/GitHub/Minishark/NAPI/build/CMakeFiles/operations.dir
+D:/GitHub/Minishark/NAPI/build/CMakeFiles/ALL_BUILD.dir
+D:/GitHub/Minishark/NAPI/build/CMakeFiles/ZERO_CHECK.dir
+=======
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/operations.dir
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/ZERO_CHECK.dir
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552

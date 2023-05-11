@@ -3,8 +3,14 @@
 #include <vector>
 #include <stdio.h>
 #include <stdlib.h>
+#include <iomanip>
 #include "../include/PcapDeserializer.h"
 #include "../include/PcapData.h"
+<<<<<<< HEAD
+#include "../include/LiveCapture.h"
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+#include <pcap.h>
 
 #define NAPI_CALL(env, call)                                      \
   do                                                              \
@@ -27,24 +33,66 @@
     }                                                             \
   } while (0)
 
+<<<<<<< HEAD
+napi_value GetInterfaceNames(napi_env env, napi_callback_info info) {
+  LiveCapture liveCapture;
+  liveCapture.getNetworkInterfaces();
+=======
+// Function to retrieve the available networks for live capture
+void getAvailableNetworks()
+{
+    char errbuf[PCAP_ERRBUF_SIZE];
+
+    // Get the list of available network devices
+    pcap_if_t *alldevs;
+    if (pcap_findalldevs(&alldevs, errbuf) == -1)
+    {
+        fprintf(stderr, "Error finding devices: %s\n", errbuf);
+        return;
+    }
+
+    // Iterate over the list of devices and print their names and descriptions
+    pcap_if_t *device;
+    for (device = alldevs; device != NULL; device = device->next)
+    {
+        printf("Name: %s\n", device->name);
+        if (device->description)
+            printf("Description: %s\n", device->description);
+        else
+            printf("Description: N/A\n");
+
+        printf("\n");
+    }
+
+    // Free the list of devices
+    pcap_freealldevs(alldevs);
+}
+
 napi_value Operations(napi_env env, napi_callback_info info)
 {
+  getAvailableNetworks();
+
   size_t argc = 1;
   napi_value args[1];
   std::string filePath;
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
   
-  // Get the value of the first argument passed to the function
-  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+  std::vector<char*> interfaceNames = liveCapture.getInterfaceNames();
 
-  // Convert the value to a C++ string
-  size_t str_size;
-  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], NULL, 0, &str_size));
-  filePath.resize(str_size);
-  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], &filePath[0], str_size + 1, NULL));
+  napi_value output;
+  NAPI_CALL(env, napi_create_array_with_length(env, interfaceNames.size(), &output));
 
-  PcapDeserializer ob(filePath);
-  //PcapDeserializer ob("D:/GitHub/Minishark/Records3.pcap");
+  for (size_t i = 0; i < interfaceNames.size(); i++) {
+    napi_value name;
+    NAPI_CALL(env, napi_create_string_utf8(env, interfaceNames[i], NAPI_AUTO_LENGTH, &name));
+    NAPI_CALL(env, napi_set_element(env, output, i, name));
+  }
 
+  return output;
+}
+
+napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob)
+{
   std::vector<PcapData> pcapParsedData = ob.getPcapInformations();
 
   // if pcapParsedData.size == 0, use try catch to solve this
@@ -116,14 +164,74 @@ napi_value Operations(napi_env env, napi_callback_info info)
 
   return output;
 }
+napi_value OperationsLiveCapture(napi_env env, napi_callback_info info)
+{
+  size_t argc = 1;
+  napi_value args[1];
+  int interfaceIndex = 0;
+
+  // Get the value of the first argument passed to the function
+  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+
+  // Convert the value to a C++ int
+  NAPI_CALL(env, napi_get_value_int32(env, args[0], &interfaceIndex));
+
+  LiveCapture liveCapture;
+  liveCapture.getNetworkInterfaces();
+  liveCapture.selectNetworkInterface(interfaceIndex);
+  liveCapture.captureLivePackets();
+
+  PcapDeserializer ob;
+  ob.liveCaptureDeserializer(liveCapture.getCapturedPackets());
+
+  return getOutput(env, info, ob);
+}
+
+napi_value Operations(napi_env env, napi_callback_info info)
+{
+  //LiveCapture capt;
+  //capt.getNetworkInterfaces();
+  //capt.selectNetworkInterface(7);
+  //capt.captureLivePackets();
+  //PcapDeserializer ob1;
+  //ob1.liveCaptureDeserializer(capt.getCapturedPackets());
+
+  size_t argc = 1;
+  napi_value args[1];
+  std::string filePath;
+  
+  // Get the value of the first argument passed to the function
+  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+
+  // Convert the value to a C++ string
+  size_t str_size;
+  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], NULL, 0, &str_size));
+  filePath.resize(str_size);
+  NAPI_CALL(env, napi_get_value_string_utf8(env, args[0], &filePath[0], str_size + 1, NULL));
+
+  PcapDeserializer ob;
+  ob.parseFile(filePath);
+
+  return getOutput(env,info,ob);
+
+}
 
 napi_value init(napi_env env, napi_value exports)
 {
   napi_value operations;
-
   napi_create_function(env, nullptr, 0, Operations, nullptr, &operations);
 
-  return operations;
+  napi_value operationsLiveCapture;
+  napi_create_function(env, nullptr, 0, OperationsLiveCapture, nullptr, &operationsLiveCapture);
+
+  napi_value getInterfaceNames;
+  napi_create_function(env, nullptr, 0, GetInterfaceNames, nullptr, &getInterfaceNames);
+
+  napi_set_named_property(env, exports, "Operations", operations);
+  napi_set_named_property(env, exports, "OperationsLiveCapture", operationsLiveCapture);
+  napi_set_named_property(env, exports, "getInterfaceNames", getInterfaceNames);
+
+  return exports;
 }
 
 NAPI_MODULE(NODE_GYP_MODULE_NAME, init);

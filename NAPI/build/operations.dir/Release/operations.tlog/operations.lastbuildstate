@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+PlatformToolSet=v143:VCToolArchitecture=Native64Bit:VCToolsVersion=14.35.32215:TargetPlatformVersion=10.0.22000.0:
+Release|x64|D:\GitHub\Minishark\NAPI\build\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native64Bit:VCToolsVersion=14.29.30133:TargetPlatformVersion=10.0.19041.0:VcpkgTriplet=x64-windows:
+Release|x64|C:\Users\Alex\Desktop\Minishark\NAPI\build\|
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552

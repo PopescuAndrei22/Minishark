@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+<<<<<<< HEAD
+      <FullPath>D:\GitHub\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
+=======
+      <FullPath>C:\Users\Alex\Desktop\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

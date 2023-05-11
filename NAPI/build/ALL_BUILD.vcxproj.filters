@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\Minishark\NAPI\CMakeLists.txt" />
+=======
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Alex\Desktop\Minishark\NAPI\CMakeLists.txt" />
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
