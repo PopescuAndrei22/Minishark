@@ -4,11 +4,40 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
                 "C:/Users/Andrei/AppData/Local/node-gyp/Cache/18.15.0/include",
                 "C:/Users/Andrei/AppData/Local/node-gyp/Cache/18.15.0/include/node",
                 "D:/GitHub/Minishark/include",
                 "D:/GitHub/Minishark/implementations",
+                "D:/GitHub/Minishark/NAPI/npcap/Include",
+                "D:/GitHub/Minishark/NAPI/npcap/Lib",
+                "D:/GitHub/Minishark/NAPI/npcap",
                 "D:/GitHub/Minishark//node_modules/node-addon-api"
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+                "C:/Users/Alex/AppData/Local/node-gyp/Cache/18.15.0/include",
+                "C:/Users/Alex/AppData/Local/node-gyp/Cache/18.15.0/include/node",
+                "C:/Users/Alex/Desktop/Minishark/include",
+                "C:/Users/Alex/Desktop/Minishark/implementations",
+                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Include",
+                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib",
+                "C:/Users/Alex/Desktop/Minishark/NAPI/npcap",
+                "C:/Users/Alex/Desktop/Minishark//node_modules/node-addon-api"
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
             ],
             "defines": [
                 "_DEBUG",

@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+^D:\GITHUB\MINISHARK\NAPI\BUILD\CMAKEFILES\D86FC69D86ADACCCA54C16B60AC26FCD\GENERATE.STAMP.RULE
+setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/GitHub/Minishark/NAPI/build/operations.sln
+=======
+^C:\USERS\ALEX\DESKTOP\MINISHARK\NAPI\BUILD\CMAKEFILES\1839F4F2D499E55E9D47C7C61A33E989\GENERATE.STAMP.RULE
+setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Alex/Desktop/Minishark/NAPI/build/operations.sln
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+^C:\USERS\ALEX\DESKTOP\MINISHARK\NAPI\BUILD\CMAKEFILES\1839F4F2D499E55E9D47C7C61A33E989\GENERATE.STAMP.RULE
+setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Alex/Desktop/Minishark/NAPI/build/operations.sln
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

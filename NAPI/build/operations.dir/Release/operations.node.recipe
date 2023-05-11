@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <FullPath>D:\GitHub\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>D:\GitHub\Minishark\NAPI\build\Release\operations.node</FullPath>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <FullPath>C:\Users\Alex\Desktop\Minishark\NAPI\build\x64\Release\ZERO_CHECK</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Users\Alex\Desktop\Minishark\NAPI\build\Release\operations.node</FullPath>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>

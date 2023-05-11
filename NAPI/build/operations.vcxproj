@@ -1,5 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+=======
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -9,146 +26,821 @@
       <Configuration>Release</Configuration>
       <Platform>x64</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3E322A26-D85E-CDDA-E601-45A4CA924514}</ProjectGuid>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <ProjectGuid>{C32CA91A-3FD3-373A-8B38-4B29635F07DA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>operations</RootNamespace>
-    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
-    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+=======
+    <ProjectGuid>{D84DC901-35CC-3EBA-8161-94C26EC423EA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <ProjectGuid>{D84DC901-35CC-3EBA-8161-94C26EC423EA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <Platform>x64</Platform>
+    <ProjectName>operations</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
-  <PropertyGroup Label="Configuration">
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
-  </PropertyGroup>
-  <PropertyGroup Label="Locals">
+    <CharacterSet>MultiByte</CharacterSet>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
     <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
-  <ImportGroup Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+=======
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+<<<<<<< Updated upstream
+=======
+=======
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <PlatformToolset>v143</PlatformToolset>
+=======
+    <PlatformToolset>v142</PlatformToolset>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <PlatformToolset>v142</PlatformToolset>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <PropertyGroup Label="UserMacros"/>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <ExecutablePath>$(ExecutablePath);$(MSBuildProjectDirectory)\..\bin\;$(MSBuildProjectDirectory)\..\bin\</ExecutablePath>
-    <IgnoreImportLibrary>true</IgnoreImportLibrary>
-    <IntDir>$(Configuration)\obj\$(ProjectName)\</IntDir>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\Debug\</OutDir>
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\Debug\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\Debug\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">operations.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\Release\</OutDir>
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\Release\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\Release\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">operations.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">operations</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
-    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
-    <TargetName>$(ProjectName)</TargetName>
-    <TargetPath>$(OutDir)\$(ProjectName).node</TargetPath>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\MinSizeRel\</OutDir>
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\MinSizeRel\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\MinSizeRel\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">operations.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\RelWithDebInfo\</OutDir>
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\RelWithDebInfo\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\RelWithDebInfo\</OutDir>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">operations.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\include\node;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\src;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\config;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\openssl\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\uv\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\zlib;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <ExceptionHandling>false</ExceptionHandling>
-      <MinimalRebuild>false</MinimalRebuild>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <OmitFramePointers>false</OmitFramePointers>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=operations;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <StringPooling>true</StringPooling>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TreatWarningAsError>false</TreatWarningAsError>
-      <WarningLevel>Level3</WarningLevel>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NAPI_VERSION=4;CMAKE_INTDIR="Debug";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
     </ClCompile>
-    <Lib>
-      <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
-    </Lib>
-    <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\Andrei\\AppData\\Local\\node-gyp\\Cache\\18.15.0\\x64\\node.lib&quot;</AdditionalDependencies>
-      <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
-      <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetExt>.node</TargetExt>
-      <TargetMachine>MachineX64</TargetMachine>
-    </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\include\node;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\src;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\config;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\openssl\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\uv\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\zlib;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=operations;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;DEBUG;_DEBUG;V8_ENABLE_CHECKS;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NAPI_VERSION=4;CMAKE_INTDIR=\"Debug\";operations_EXPORTS</PreprocessorDefinitions>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/Debug/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/Debug/operations.pdb</ProgramDataBaseFile>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64;C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Alex/Desktop/Minishark/NAPI/build/Debug/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Alex/Desktop/Minishark/NAPI/build/Debug/operations.pdb</ProgramDataBaseFile>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\include\node;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\src;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\config;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\openssl\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\uv\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\zlib;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>/Zc:__cplusplus -std:c++17 %(AdditionalOptions)</AdditionalOptions>
-      <BufferSecurityCheck>true</BufferSecurityCheck>
-      <DebugInformationFormat>OldStyle</DebugInformationFormat>
-      <DisableSpecificWarnings>4351;4355;4800;4251;4275;4244;4267;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <ExceptionHandling>false</ExceptionHandling>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <FunctionLevelLinking>true</FunctionLevelLinking>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
-      <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <OmitFramePointers>true</OmitFramePointers>
-      <Optimization>Full</Optimization>
+      <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=operations;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <RuntimeTypeInfo>false</RuntimeTypeInfo>
-      <StringPooling>true</StringPooling>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TreatWarningAsError>false</TreatWarningAsError>
-      <WarningLevel>Level3</WarningLevel>
-      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="Release";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
     </ClCompile>
-    <Lib>
-      <AdditionalOptions>/LTCG:INCREMENTAL %(AdditionalOptions)</AdditionalOptions>
-    </Lib>
-    <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;DelayImp.lib;&quot;C:\\Users\\Andrei\\AppData\\Local\\node-gyp\\Cache\\18.15.0\\x64\\node.lib&quot;</AdditionalDependencies>
-      <AdditionalOptions>/LTCG:INCREMENTAL /ignore:4199 %(AdditionalOptions)</AdditionalOptions>
-      <DelayLoadDLLs>node.exe;%(DelayLoadDLLs)</DelayLoadDLLs>
-      <EnableCOMDATFolding>true</EnableCOMDATFolding>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <OptimizeReferences>true</OptimizeReferences>
-      <OutputFile>$(OutDir)$(ProjectName).node</OutputFile>
-      <SuppressStartupBanner>true</SuppressStartupBanner>
-      <TargetExt>.node</TargetExt>
-      <TargetMachine>MachineX64</TargetMachine>
-    </Link>
     <ResourceCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\include\node;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\src;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\config;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\openssl\openssl\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\uv\include;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\zlib;C:\Users\Andrei\AppData\Local\node-gyp\Cache\18.15.0\deps\v8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>NODE_GYP_MODULE_NAME=operations;USING_UV_SHARED=1;USING_V8_SHARED=1;V8_DEPRECATION_WARNINGS=1;V8_DEPRECATION_WARNINGS;V8_IMMINENT_DEPRECATION_WARNINGS;_GLIBCXX_USE_CXX11_ABI=1;WIN32;_CRT_SECURE_NO_DEPRECATE;_CRT_NONSTDC_NO_DEPRECATE;_HAS_EXCEPTIONS=0;OPENSSL_NO_PINSHARED;OPENSSL_THREADS;BUILDING_NODE_EXTENSION;HOST_BINARY=&quot;node.exe&quot;;%(PreprocessorDefinitions);%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"Release\";operations_EXPORTS</PreprocessorDefinitions>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/Release/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/Release/operations.pdb</ProgramDataBaseFile>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64;C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Alex/Desktop/Minishark/NAPI/build/Release/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Alex/Desktop/Minishark/NAPI/build/Release/operations.pdb</ProgramDataBaseFile>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="MinSizeRel";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"MinSizeRel\";operations_EXPORTS</PreprocessorDefinitions>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/MinSizeRel/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/MinSizeRel/operations.pdb</ProgramDataBaseFile>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64;C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Alex/Desktop/Minishark/NAPI/build/MinSizeRel/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Alex/Desktop/Minishark/NAPI/build/MinSizeRel/operations.pdb</ProgramDataBaseFile>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="RelWithDebInfo";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"RelWithDebInfo\";operations_EXPORTS</PreprocessorDefinitions>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\include\node;C:\Users\Alex\Desktop\Minishark\include;C:\Users\Alex\Desktop\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/RelWithDebInfo/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/RelWithDebInfo/operations.pdb</ProgramDataBaseFile>
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalDependencies>C:\Users\Alex\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64;C:/Users/Alex/Desktop/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Alex/Desktop/Minishark/NAPI/build/RelWithDebInfo/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Alex/Desktop/Minishark/NAPI/build/RelWithDebInfo/operations.pdb</ProgramDataBaseFile>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\binding.gyp"/>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <CustomBuild Include="D:\GitHub\Minishark\NAPI\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+    <CustomBuild Include="C:\Users\Alex\Desktop\Minishark\NAPI\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Alex/Desktop/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-file C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/generate.stamp
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCXXCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeRCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Alex/Desktop/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-file C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/generate.stamp
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCXXCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeRCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Alex/Desktop/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-file C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/generate.stamp
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+=======
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCXXCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeRCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Alex/Desktop/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\cmake-3.26.0-windows-x86_64\bin\cmake.exe -SC:/Users/Alex/Desktop/Minishark/NAPI -BC:/Users/Alex/Desktop/Minishark/NAPI/build --check-stamp-file C:/Users/Alex/Desktop/Minishark/NAPI/build/CMakeFiles/generate.stamp
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+=======
+>>>>>>> Stashed changes
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+=======
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCXXCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeRCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeCXXCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeRCCompiler.cmake;C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\3.26.0\CMakeSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\cmake-3.26.0-windows-x86_64\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Alex\Desktop\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\operations.cc">
-      <ObjectFileName>$(IntDir)\operations.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\implementations\PcapData.cpp">
-      <ObjectFileName>$(IntDir)\implementations\PcapData.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="..\..\implementations\PcapDeserializer.cpp">
-      <ObjectFileName>$(IntDir)\implementations\PcapDeserializer.obj</ObjectFileName>
-    </ClCompile>
-    <ClCompile Include="C:\Users\Andrei\AppData\Roaming\npm\node_modules\node-gyp\src\win_delay_load_hook.cc"/>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    <ClCompile Include="D:\GitHub\Minishark\NAPI\operations.cc" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\PcapData.cpp" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\PcapDeserializer.cpp" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\LiveCapture.cpp" />
+    <ClCompile Include="C:\Users\Andrei\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc" />
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
+  <ItemGroup>
+    <ProjectReference Include="D:\GitHub\Minishark\NAPI\build\ZERO_CHECK.vcxproj">
+      <Project>{879A9F2D-A497-3896-A2F1-CE6497A80319}</Project>
+=======
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\NAPI\operations.cc" />
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapData.cpp" />
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapDeserializer.cpp" />
+    <ClCompile Include="C:\Users\Alex\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Alex\Desktop\Minishark\NAPI\build\ZERO_CHECK.vcxproj">
+      <Project>{162B54A5-7647-33F3-B61C-CADDA5237B7D}</Project>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+<<<<<<< Updated upstream
+=======
+=======
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\NAPI\operations.cc" />
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapData.cpp" />
+    <ClCompile Include="C:\Users\Alex\Desktop\Minishark\implementations\PcapDeserializer.cpp" />
+    <ClCompile Include="C:\Users\Alex\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Alex\Desktop\Minishark\NAPI\build\ZERO_CHECK.vcxproj">
+      <Project>{162B54A5-7647-33F3-B61C-CADDA5237B7D}</Project>
+>>>>>>> beb56a55f6282374a01e3177ecab618d9370d552
+>>>>>>> Stashed changes
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

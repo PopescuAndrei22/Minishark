@@ -1,7 +1,5 @@
 #include "../include/PcapDeserializer.h"
 
-/*getters*/
-
 // function that gets the info field
 std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
 {
@@ -198,7 +196,7 @@ std::string PcapDeserializer::getProtocolName(const PacketRecord& packet) const
 }
 
 // reading pcap file and getting Packet Record
-void PcapDeserializer::readFile(std::string fileName, std::vector<PacketRecord> &packets)
+void PcapDeserializer::readFile(std::string fileName)
 {
     // opening the file
     std::ifstream file(fileName, std::ios::binary);
@@ -234,7 +232,7 @@ void PcapDeserializer::readFile(std::string fileName, std::vector<PacketRecord> 
 }
 
 // parsing the packet content from Packet Record
-void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<FrontEndData> &frontEndData)
+void PcapDeserializer::getData()
 {
     int counter = 1;
 
@@ -323,27 +321,8 @@ void PcapDeserializer::getData(std::vector<PacketRecord> packets, std::vector<Fr
 
             counter++;
         }
-}
 
-std::vector <PcapData> PcapDeserializer::getPcapInformations() const
-{
-    return this->parsedData;
-}
-
-void PcapDeserializer::parseFile(std::string fileName)
-{
-    std::vector <PacketRecord> packets; // the vector containing the Packet Records
-    std::vector <FrontEndData> frontEndData;
-
-    this->readFile(fileName,packets);
-
-    this->getData(packets,frontEndData);
-
-    this->transferData(packets,frontEndData);
-}
-
-void PcapDeserializer::transferData(std::vector<PacketRecord> packets, std::vector<FrontEndData> frontEndData)
-{
+    // getting full parsed data
     PcapData data;
 
     for(unsigned i=0; i<packets.size(); i++)
@@ -355,12 +334,38 @@ void PcapDeserializer::transferData(std::vector<PacketRecord> packets, std::vect
         }
 }
 
-PcapDeserializer::PcapDeserializer(std::string fileName)
+std::vector <PcapData> PcapDeserializer::getPcapInformations() const
 {
-    this->parseFile(fileName);
+    return this->parsedData;
+}
+
+void PcapDeserializer::parseFile(std::string fileName)
+{
+    this->readFile(fileName);
+
+    this->getData();
+}
+
+void PcapDeserializer::liveCaptureDeserializer(std::vector<PacketRecord> capturedPackets)
+{
+    this->packets = capturedPackets;
+
+    this->getData();
+}
+
+void PcapDeserializer::clearData()
+{
+    this->parsedData.clear();
+    this->frontEndData.clear();
+    this->packets.clear();
+}
+
+PcapDeserializer::PcapDeserializer()
+{
+    
 }
 
 PcapDeserializer::~PcapDeserializer()
 {
-
+    this->clearData();
 }
