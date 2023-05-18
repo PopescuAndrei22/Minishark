@@ -73,6 +73,7 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
     //Packet record
 
     std::uint32_t originalPacketLength = pcapParsedData[i].getOriginalPacketLength();
+    std::uint32_t capturedPacketLength = pcapParsedData[i].getCapturedPacketLength();
 
     napi_value obj;
     napi_create_object(env, &obj);
@@ -84,11 +85,14 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
     //NAPI variables for packet record
 
     napi_value napiOriginalPacketLength;
+    napi_value napiCapturedPacketLength;
 
     //NAPI for packet record
     NAPI_CALL(env, napi_create_uint32(env, originalPacketLength, &napiOriginalPacketLength));
+    NAPI_CALL(env, napi_create_uint32(env, capturedPacketLength, &napiCapturedPacketLength));
 
     NAPI_CALL(env, napi_set_named_property(env, obj, "originalPacketLength", napiOriginalPacketLength));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "capturedPacketLength", napiCapturedPacketLength));
 
     // NAPI for frontend data
     NAPI_CALL(env, napi_create_uint32(env, index, &napiIndex));
@@ -121,6 +125,7 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
 
   return output;
 }
+
 napi_value OperationsLiveCapture(napi_env env, napi_callback_info info)
 {
   size_t argc = 1;

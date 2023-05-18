@@ -35,6 +35,7 @@ window.onload = function() {
       {
         return;
       }
+      
       const classic = document.querySelector('#classic');
       capturedPackets[tabId] = classic.innerHTML;
 
@@ -76,22 +77,80 @@ window.onload = function() {
 
       // Add onclick event to each row
       row.onclick = function(event) {
-        displayInfoData(obj.hexValues, obj.readableString, currentID, event);
+        displayInfoData(obj, currentID, event);
       }
     });
   }
 
-function displayInfoData(hexValues, readableString, currentID, event) {
+  function openNav(index) {
+    var elementId = "mySidepanel-" + index;
+    document.getElementById(elementId).style.width = "50%";
+    document.getElementById(elementId).style.height = "50%";
+  }
+  
+  function closeNav(index) {
+    var elementId = "mySidepanel-" + index;
+    document.getElementById(elementId).style.width = "0%";
+    document.getElementById(elementId).style.height = "0%";
+  }
+
+function displayInfoData(obj,currentID, event) {
   const hexField = document.getElementById("hex-" + currentID);
   const readableField = document.getElementById("readableString-" + currentID);
+  const dropdownField = document.getElementById("dropdown-" + currentID);
 
   // i had .textContent before
+  dropdownField.innerHTML = `
+  <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Packet details </h2>
+
+  <div id="mySidepanel-1" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">×</a>
+  <a href="#">About 1</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<div id="mySidepanel-2" class="sidepanel">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">×</a>
+<a href="#">About 2</a>
+<a href="#">Services</a>
+<a href="#">Clients</a>
+<a href="#">Contact</a>
+</div>
+
+<div id="mySidepanel-3" class="sidepanel">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav(3)">×</a>
+<a href="#">About 3</a>
+<a href="#">Services</a>
+<a href="#">Clients</a>
+<a href="#">Contact</a>
+</div>
+
+<div id="mySidepanel-4" class="sidepanel">
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">×</a>
+<a href="#">About 4</a>
+<a href="#">Services</a>
+<a href="#">Clients</a>
+<a href="#">Contact</a>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <button class="openbtn" onclick="openNav(1)">Frame ${obj.index}: ${obj.originalPacketLength} bytes on wire (${obj.originalPacketLength * 8} bits), ${obj.capturedPacketLength} bytes captured (${obj.capturedPacketLength * 8} bits)</button>
+  <button class="openbtn" onclick="openNav(2)">Ethernet II</button>
+  <button class="openbtn" onclick="openNav(3)">Internet protocol version 4</button>
+  <button class="openbtn" onclick="openNav(4)">Transport layer security</button>
+</div>
+
+  `;
+
   hexField.innerHTML =
     "<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details</h2>" +
-    hexValues;
+    obj.hexValues;
+
   readableField.innerHTML =
     "<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details in readable format</h2>" +
-    readableString;
+    obj.readableString;
 
   // Check if the event parameter is defined
   if (event && event.currentTarget) {
@@ -105,6 +164,7 @@ function displayInfoData(hexValues, readableString, currentID, event) {
     event.currentTarget.classList.add("selected-row");
   }
 }
+
   function submitForm() {
     const fileInput = document.getElementById("file-upload");
     const filePath = fileInput.files[0].path;
@@ -228,7 +288,7 @@ tabContent[0] = tableContainer;
     </tbody>
   </table>
 
-  <div class="table-details"></div>
+  <div class="table-details" id="dropdown-${tabCounter}"></div>
 
   <div class="table-content-details" id="hex-${tabCounter}" style="margin-left:50%"></div>
 
@@ -312,7 +372,7 @@ isLiveCapture[tabCounter] = true;
     </tbody>
   </table>
 
-  <div class="table-details"></div>
+  <div class="table-details" id="dropdown-${tabCounter}"></div>
 
   <div class="table-content-details" id="hex-${tabCounter}" style="margin-left:50%"></div>
 

@@ -288,8 +288,8 @@ void PcapDeserializer::getData()
 
             for (const auto& byte : packet.packetContent)
             {
-
-                 oss << std::hex << static_cast<int>(byte) << " ";
+                oss << std::hex << std::setw(2) << std::setfill('0') << static_cast<int>(byte) << " ";
+                //oss << std::hex << static_cast<int>(byte) << " ";
 
                 if (std::isprint(byte))
                 {

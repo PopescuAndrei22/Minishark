@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build",
+        "type": "shell",
+        "command": "g++",
+        "args": [
+          "main.cpp",
+          "-o",
+          "output",
+          "-IC:/Users/Andrei/AppData/Local/node-gyp/Cache/18.15.0/include/node",  // Add include directories using -I
+          "-L/path/to/libraries", // Add library directories using -L
+          "-llibrary1",          // Link against library1 using -l
+          "-llibrary2"           // Link against library2 using -l
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }

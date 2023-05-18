@@ -5,6 +5,7 @@
 #include <vector>
 #include <pcap.h>
 #include "PcapData.h"
+#include <node_api.h>
 
 #define MAX_PACKETS 1
 

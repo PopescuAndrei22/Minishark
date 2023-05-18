@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -102,10 +102,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NAPI_VERSION=4;CMAKE_INTDIR=\"Debug\";operations_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +114,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -128,7 +128,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -144,10 +144,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"Release\";operations_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -156,7 +156,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -170,7 +170,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -186,10 +186,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"MinSizeRel\";operations_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -198,7 +198,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -212,7 +212,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -227,10 +227,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"RelWithDebInfo\";operations_EXPORTS</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\include;D:\GitHub\Minishark\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -239,7 +239,7 @@
     </Midl>
     <Link>
       <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>

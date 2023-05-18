@@ -8,19 +8,33 @@ add_definitions(-DNAPI_VERSION=4)
 
 include_directories(${CMAKE_JS_INC})
 
+# # Add the directory containing your class headers
+# include_directories("D:/GitHub/Minishark/include")
+# include_directories("D:/GitHub/Minishark/NAPI/npcap/Include")
+
+# # Add the directory containing the Npcap library files
+# link_directories("D:/GitHub/Minishark/NAPI/npcap/Lib/x64")
+
+# file(GLOB SOURCE_FILES "D:/Github/Minishark/NAPI/operations.cc")
+
+# # Add the source files for your classes
+# list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/PcapData.cpp")
+# list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/PcapDeserializer.cpp")
+# list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/LiveCapture.cpp")
+
 # Add the directory containing your class headers
-include_directories("D:/GitHub/Minishark/include")
-include_directories("D:/GitHub/Minishark/NAPI/npcap/Include")
+include_directories("../include")
+include_directories("../NAPI/npcap/Include")
 
 # Add the directory containing the Npcap library files
-link_directories("D:/GitHub/Minishark/NAPI/npcap/Lib/x64")
+link_directories("../NAPI/npcap/Lib/x64")
 
-file(GLOB SOURCE_FILES "D:/Github/Minishark/NAPI/operations.cc")
+file(GLOB SOURCE_FILES "../NAPI/operations.cc")
 
 # Add the source files for your classes
-list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/PcapData.cpp")
-list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/PcapDeserializer.cpp")
-list(APPEND SOURCE_FILES "D:/GitHub/Minishark/implementations/LiveCapture.cpp")
+list(APPEND SOURCE_FILES "../implementations/PcapData.cpp")
+list(APPEND SOURCE_FILES "../implementations/PcapDeserializer.cpp")
+list(APPEND SOURCE_FILES "../implementations/LiveCapture.cpp")
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
