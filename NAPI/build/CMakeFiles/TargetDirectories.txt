@@ -1,3 +1,0 @@
-D:/GitHub/Minishark/NAPI/build/CMakeFiles/operations.dir
-D:/GitHub/Minishark/NAPI/build/CMakeFiles/ALL_BUILD.dir
-D:/GitHub/Minishark/NAPI/build/CMakeFiles/ZERO_CHECK.dir
