@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, ipcRenderer } = require('electron');
 const path = require('path');
 const getPcapData = require("./NAPI/build/Release/operations");
 
@@ -17,6 +17,36 @@ function createWindow(){
     });
 
     win.loadFile('src/index.html');
+
+    function createMenu() {
+        const template = [
+          {
+            label: 'File',
+            submenu: [
+              {
+                label: 'Save',
+                accelerator: 'CmdOrCtrl+S',
+                click: () => {
+                  // Handle the "Save" button click event
+                  win.webContents.send('save');
+                },
+              },
+              { role: 'quit' }, // Add the default "Quit" menu item
+            ],
+          },
+          { role: 'editMenu' }, // Add the default "Edit" menu items
+          { role: 'viewMenu' }, // Add the default "View" menu items
+        ];
+      
+        const menu = Menu.buildFromTemplate(template);
+        Menu.setApplicationMenu(menu);
+
+        win.webContents.on('did-finish-load', () => {
+            win.webContents.send('window-loaded'); // Notify the window that it has finished loading
+          });
+      }
+      
+      createMenu();
 }
 
 app.whenReady().then(() => {

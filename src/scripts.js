@@ -29,6 +29,15 @@ window.onload = function() {
   //   console.log(data);
   // }
 
+  window.api.receive('save', () => {
+    saveFunction();
+  });
+  
+  function saveFunction() {
+    console.log('Save button clicked!');
+    // Implement your saving logic here
+  }
+
   function runLiveCaptureLoop(tabId) {
     setTimeout(function () {
       if(tabId != activeTabId)
@@ -105,10 +114,10 @@ function displayInfoData(obj,currentID, event) {
 
   <div id="mySidepanel-1" class="sidepanel">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav(1)">×</a>
-  <a href="#">About 1</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Frame details </h2>
+  <a>Frame number: ${obj.index}</a>
+  <a>Frame length: ${obj.originalPacketLength} bytes (${obj.originalPacketLength * 8} bits) </a>
+  <a>Capture length: ${obj.capturedPacketLength} bytes (${obj.capturedPacketLength * 8} bits) </a>
 </div>
 
 <div id="mySidepanel-2" class="sidepanel">
@@ -196,16 +205,16 @@ function displayInfoData(obj,currentID, event) {
   
     const tableContainer = document.createElement('div');
     tableContainer.innerHTML = `
-    <div>
+    <div style="margin-top:10px;">
     <form id="file-upload-form" class="uploader" style="text-align: center;">
     <input id="file-upload" type="file" name="fileUpload"/>
-    <input class="btn btn-primary" type="button" value="Submit" onclick="submitForm()">
   
     <label for="file-upload" id="file-drag">
       <div id="start">
         <i class="fa fa-download" aria-hidden="true"></i>
         <div id="select-file-name">Select a file or drag here</div>
         <span id="file-upload-btn" class="btn btn-primary" onclick="getFileName()">Select a file</span>
+        <input class="btn btn-primary" type="button" value="Submit" onclick="submitForm()">
       </div>
     </label>
   </form>
@@ -216,14 +225,14 @@ function displayInfoData(obj,currentID, event) {
 <div class="theme-container">
   <h1 class="custom-title">Pick the desired theme</h1>
 <div class="theme-switcher">
-  <button data-theme="crimson" class="theme-button gradient-crimson" aria-pressed="false">Crimson Heart</button>
-  <button data-theme="azure" class="theme-button gradient-azure" aria-pressed="false">Crystal Azure</button>
-  <button data-theme="orange" class="theme-button gradient-orange" aria-pressed="false">Sunset Orange</button>
-  <button data-theme="green" class="theme-button gradient-green" aria-pressed="false">Jade Green</button>
+  <button data-theme="crimson" class="theme-button gradient-crimson">Crimson Heart</button>
+  <button data-theme="azure" class="theme-button gradient-azure">Crystal Azure</button>
+  <button data-theme="orange" class="theme-button gradient-orange">Sunset Orange</button>
+  <button data-theme="green" class="theme-button gradient-green">Jade Green</button>
 </div>
 
 <div class="theme-switcher">
-<button data-theme="default" class="theme-button gradient" aria-pressed="false">Default</button>
+<button data-theme="default" class="theme-button gradient">Default</button>
 <button class="theme-button-customize gradient" onclick='openSmallWindow()'>Customize</button>
 </div>
 

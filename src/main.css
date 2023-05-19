@@ -86,7 +86,7 @@ th {
   height: 250px;
   top: 50%;
   left: 0;
-  background-color: #111;
+  background-color: var(--side-panel-background-global);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
@@ -115,7 +115,7 @@ th {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
+  background-color: var(--packet-details-button-background-global);
   color: white;
   padding: 10px 15px;
   border: none;
@@ -125,7 +125,7 @@ th {
 }
 
 .openbtn:hover {
-  background-color:#444;
+  background-color: var(--packet-details-button-hover-global);
 }
 /* dropdown end */
 

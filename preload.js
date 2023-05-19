@@ -4,6 +4,13 @@ contextBridge.exposeInMainWorld('api', {
   // getPcapData: async (filePath) => {
   //   return await ipcRenderer.invoke('getPcapData', filePath);
   // },
+  saveFunction: () => {
+    ipcRenderer.send('save');
+  },
+  receive: (channel, callback) => {
+    ipcRenderer.on(channel, (_, ...args) => callback(...args));
+  },
+
   getInterfaceNames: async () => {
     return await ipcRenderer.invoke('getInterfaceNames');
   },

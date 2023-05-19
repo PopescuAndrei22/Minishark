@@ -29,6 +29,9 @@ const handleThemeSelection = (event) => {
   var colorTabActive = computedStyles.getPropertyValue('--color-tab-active');
   var colorTabHover = computedStyles.getPropertyValue('--color-tab-hover');
   var tableContentDetailsTitle = computedStyles.getPropertyValue('--table-content-details-title');
+  var buttons = computedStyles.getPropertyValue('--buttons');
+  var selectBoxBackground = computedStyles.getPropertyValue('--select-box-background');
+  var selectBoxBorder = computedStyles.getPropertyValue('--select-box-border');
 
   // Update the global CSS variables on the document's root element
   document.documentElement.style.setProperty('--color-background-global', colorBackground);
@@ -40,6 +43,9 @@ const handleThemeSelection = (event) => {
   document.documentElement.style.setProperty('--color-tab-active-global', colorTabActive);
   document.documentElement.style.setProperty('--color-tab-hover-global', colorTabHover);
   document.documentElement.style.setProperty('--table-content-details-title-global', tableContentDetailsTitle);
+  document.documentElement.style.setProperty('--buttons-global', buttons);
+  document.documentElement.style.setProperty('--select-box-background-global', selectBoxBackground);
+  document.documentElement.style.setProperty('--select-box-border-global', selectBoxBorder);
 
   // Remove the temporary element from the document body
   document.body.removeChild(tempElement);

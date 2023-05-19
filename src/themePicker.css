@@ -1,6 +1,6 @@
 :root {
   --color-background-global: rgb(22, 0, 150);
-  --color-text-global: rgb(160, 216, 114);
+  --color-text-global: rgb(57, 224, 121);
   --color-table-hover-global: rgb(37, 158, 13);
   --color-table-header-global: rgb(42, 160, 175);
   --color-table-selected-row-global: rgb(18, 156, 92);
@@ -8,6 +8,12 @@
   --color-tab-active-global: rgb(10, 117, 150);
   --color-tab-hover-global: rgb(3, 151, 60);
   --table-content-details-title-global: rgb(81, 175, 182);
+  --buttons-global: rgb(4, 66, 146);
+  --select-box-background-global: rgb(37, 61, 126);
+  --select-box-border-global: rgb(30, 151, 50);
+  --packet-details-button-background-global: rgb(29, 139, 139);
+  --packet-details-button-hover-global: rgb(107, 209, 107);
+  --side-panel-background-global: rgb(20, 24, 85);
 }
 
 .theme-default {
@@ -20,6 +26,9 @@
   --color-tab-active: rgb(10, 117, 150);
   --color-tab-hover: rgb(3, 151, 60);
   --table-content-details-title: rgb(81, 175, 182);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(197, 11, 11);
+  --select-box-border: rgb(197, 11, 11);
 }
 
 .theme-orange {
@@ -32,6 +41,9 @@
   --color-tab-active: rgb(173, 173, 173);
   --color-tab-hover: rgb(213, 223, 85);
   --table-content-details-title: rgb(216, 213, 210);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(197, 11, 11);
+  --select-box-border: rgb(197, 11, 11);
 }
 
 .theme-crimson {
@@ -44,6 +56,9 @@
   --color-tab-active: rgb(8, 127, 224);
   --color-tab-hover: rgb(21, 209, 146);
   --table-content-details-title: rgb(38, 176, 180);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(197, 11, 11);
+  --select-box-border: rgb(197, 11, 11);
 }
 
 .theme-azure {
@@ -56,6 +71,9 @@
   --color-tab-active: rgb(8, 127, 224);
   --color-tab-hover: rgb(21, 209, 146);
   --table-content-details-title: rgb(90, 243, 167);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(197, 11, 11);
+  --select-box-border: rgb(197, 11, 11);
 }
 
 .theme-green {
@@ -68,6 +86,9 @@
   --color-tab-active: rgb(199, 150, 14);
   --color-tab-hover: rgba(231, 200, 97, 0.89);
   --table-content-details-title: rgb(233, 33, 76);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(197, 11, 11);
+  --select-box-border: rgb(197, 11, 11);
 }
 
 /* [data-selected-theme="default"] {
