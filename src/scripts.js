@@ -35,29 +35,30 @@ window.onload = function() {
     saveFunction();
   });
   
-  function requestFileSystemAccess() {
-    return window.showSaveFilePicker();
-  }
-  
-  function handleFileSelection(handle) {
-    // Get the chosen file path
-    const filePath = handle.name;
-  
-    console.log('Selected folder path:', filePath);
+  function handleFileSelection(filePath) {
+    console.log('Selected file path:', filePath);
   
     // Implement your saving logic here
   
-    // to implement logic for tabs
+    // Implement logic for tabs
   
-    api.SavePCAP(dataPackets[activeTabId], filePath);
+     api.SavePCAP(dataPackets[activeTabId], filePath);
   }
   
   function saveFunction() {
     console.log('Save event received!');
   
-    // Request file system access
-    requestFileSystemAccess().then(handle => {
-      handleFileSelection(handle);
+    // Show the save dialog using the exposed Electron API
+    window.api.showSaveDialog({
+      defaultPath: 'filename.pcap', // Set a default file name
+      properties: ['createDirectory'] // Optional: Allow creating a new directory
+    }).then(result => {
+      if (!result.canceled) {
+        const filePath = result.filePath;
+        handleFileSelection(filePath);
+      } else {
+        // Handle dialog cancellation
+      }
     }).catch(error => {
       // Handle errors
       console.error('File save error:', error);

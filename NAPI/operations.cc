@@ -228,6 +228,7 @@ napi_value SavePCAP(napi_env env, napi_callback_info info)
   }
 
   PcapSerializer ob;
+  ob.init(filePath);
   ob.savePcap(packetRecords);
 
 

@@ -2,8 +2,6 @@
 
 void PcapSerializer::savePcap(std::vector<PacketRecord> packets)
 {
-    std::string pcapFileName = "test";
-
     pcap_t* pcapHandle;
     char errbuf[PCAP_ERRBUF_SIZE];
 
@@ -15,7 +13,7 @@ void PcapSerializer::savePcap(std::vector<PacketRecord> packets)
     }
 
     // Create a pcap dump file for writing
-    pcap_dumper_t* pcapDumper = pcap_dump_open(pcapHandle, pcapFileName.c_str());
+    pcap_dumper_t* pcapDumper = pcap_dump_open(pcapHandle, this->filePath.c_str());
     if (pcapDumper == nullptr) {
         // Error handling
         pcap_close(pcapHandle);
@@ -41,7 +39,18 @@ void PcapSerializer::savePcap(std::vector<PacketRecord> packets)
 
 void PcapSerializer::init(std::string filePath)
 {
-    this->filePath = filePath;
+    // Replace backslashes with forward slashes
+    std::replace(filePath.begin(), filePath.end(), '\\', '/');
+
+    // Remove invisible characters from the file path
+    std::string cleanedFilePath;
+    for (char ch : filePath) {
+        if (std::isprint(static_cast<unsigned char>(ch))) {
+            cleanedFilePath += ch;
+        }
+    }
+
+    this->filePath = cleanedFilePath;
 }
 
 // constructors

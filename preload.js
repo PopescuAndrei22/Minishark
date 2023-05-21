@@ -11,6 +11,11 @@ contextBridge.exposeInMainWorld('api', {
     ipcRenderer.on(channel, (_, ...args) => callback(...args));
   },
 
+  showSaveDialog: async (options) => {
+    const result = await ipcRenderer.invoke('showSaveDialog', options);
+    return result;
+  },
+
   getInterfaceNames: async () => {
     return await ipcRenderer.invoke('getInterfaceNames');
   },

@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain, ipcRenderer } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog } = require('electron');
 const path = require('path');
 const getPcapData = require("./NAPI/build/Release/operations");
 
@@ -55,6 +55,10 @@ app.whenReady().then(() => {
     // ipcMain.handle('getPcapData', async (event, filePath) => {
     //     return getPcapData(filePath);
     // });
+    ipcMain.handle('showSaveDialog', async (event, options) => {
+      const result = await dialog.showSaveDialog(options);
+      return result;
+    });
 
     ipcMain.handle('getInterfaceNames', async (event) => {
         return getPcapData.getInterfaceNames();

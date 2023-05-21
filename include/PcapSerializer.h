@@ -4,6 +4,7 @@
 #include <vector>
 #include <pcap.h>
 #include "../include/PcapData.h"
+#include <algorithm>
 
 class PcapSerializer
 {
