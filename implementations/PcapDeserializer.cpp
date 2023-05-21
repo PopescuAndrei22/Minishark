@@ -209,8 +209,6 @@ void PcapDeserializer::readFile(std::string fileName)
     // skip pcap file header
     file.seekg(24, std::ios::beg);
 
-
-
     PacketRecord packet;
     // reading the pcap file to get the Packet Record
     while (file.peek() != EOF)

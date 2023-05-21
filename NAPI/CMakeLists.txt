@@ -35,6 +35,7 @@ file(GLOB SOURCE_FILES "../NAPI/operations.cc")
 list(APPEND SOURCE_FILES "../implementations/PcapData.cpp")
 list(APPEND SOURCE_FILES "../implementations/PcapDeserializer.cpp")
 list(APPEND SOURCE_FILES "../implementations/LiveCapture.cpp")
+list(APPEND SOURCE_FILES "../implementations/PcapSerializer.cpp")
 
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")

@@ -69,5 +69,6 @@
         "xlocmon": "cpp",
         "xloctime": "cpp",
         "xtree": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "D:/GitHub/Minishark/NAPI"
 }

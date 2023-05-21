@@ -9,6 +9,8 @@ let activeTabId = null;
 
 let capturedPackets = {};
 
+let dataPackets = {};
+
 window.onload = function() {
     createHomeTab();
     initializeThemeButtons();
@@ -33,11 +35,35 @@ window.onload = function() {
     saveFunction();
   });
   
-  function saveFunction() {
-    console.log('Save button clicked!');
-    // Implement your saving logic here
+  function requestFileSystemAccess() {
+    return window.showSaveFilePicker();
   }
-
+  
+  function handleFileSelection(handle) {
+    // Get the chosen file path
+    const filePath = handle.name;
+  
+    console.log('Selected folder path:', filePath);
+  
+    // Implement your saving logic here
+  
+    // to implement logic for tabs
+  
+    api.SavePCAP(dataPackets[activeTabId], filePath);
+  }
+  
+  function saveFunction() {
+    console.log('Save event received!');
+  
+    // Request file system access
+    requestFileSystemAccess().then(handle => {
+      handleFileSelection(handle);
+    }).catch(error => {
+      // Handle errors
+      console.error('File save error:', error);
+    });
+  }
+  
   function runLiveCaptureLoop(tabId) {
     setTimeout(function () {
       if(tabId != activeTabId)
@@ -68,6 +94,9 @@ window.onload = function() {
   }
 
   async function myFunction(data, currentID) {
+
+    dataPackets[currentID] = data; // for pcap serializer
+
     // data = await api.Operations(filePath);
     // process the data here
     

@@ -67,6 +67,11 @@ app.whenReady().then(() => {
     ipcMain.handle('OperationsLiveCapture', async (event, networkInterfaceIndex) => {
         return getPcapData.OperationsLiveCapture(networkInterfaceIndex);
     });
+
+    ipcMain.handle('SavePCAP', async (event, data, filePath) => {
+      return getPcapData.SavePCAP(data, filePath);
+  });
+
  });
   
 app.on('window-all-closed', () => {
