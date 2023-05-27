@@ -4,8 +4,21 @@ contextBridge.exposeInMainWorld('api', {
   // getPcapData: async (filePath) => {
   //   return await ipcRenderer.invoke('getPcapData', filePath);
   // },
+
+  startFunction: () => {
+    ipcRenderer.send('startCapture');
+  },
+  stopFunction: () => {
+    ipcRenderer.send('stopCapture');
+  },
+  restartFunction: () => {
+    ipcRenderer.send('restartCapture');
+  },
   saveFunction: () => {
     ipcRenderer.send('save');
+  },
+  movePacketsFunction: () => {
+    ipcRenderer.send('movePackets');
   },
   receive: (channel, callback) => {
     ipcRenderer.on(channel, (_, ...args) => callback(...args));

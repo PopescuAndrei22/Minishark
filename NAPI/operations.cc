@@ -9,6 +9,8 @@
 #include "../include/LiveCapture.h"
 #include "../include/PcapSerializer.h"
 #include <pcap.h>
+#include <functional>
+#include <thread>
 
 #define NAPI_CALL(env, call)                                      \
   do                                                              \
@@ -230,8 +232,7 @@ napi_value SavePCAP(napi_env env, napi_callback_info info)
   PcapSerializer ob;
   ob.init(filePath);
   ob.savePcap(packetRecords);
-
-
+  
   return nullptr;
 }
 
@@ -284,7 +285,6 @@ napi_value Operations(napi_env env, napi_callback_info info)
   ob.parseFile(filePath);
 
   return getOutput(env,info,ob);
-
 }
 
 napi_value init(napi_env env, napi_value exports)
