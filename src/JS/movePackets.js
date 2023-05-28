@@ -112,8 +112,6 @@ function getCheckedRowIndexesPackets() {
         // updating frontend
         dataPackets[indexTab] = newDataContent;
 
-        console.log(activeTabId,indexTab);
-
         // updating indexes
         dataPackets[indexTab].forEach((obj) => {
             obj.index = indexPacketInTable;
@@ -129,15 +127,23 @@ function getCheckedRowIndexesPackets() {
     let checkedIndexesPackets = getCheckedRowIndexesPackets();
     let checkedIndexesTabs = getCheckedSidePanelIndexes();
 
-    // checkedIndexesPackets.forEach((index) => {
-    //   // Perform actions with the index
-    //   console.log("packet",index); // Example action: Output the index to the console
-    // });
-    // checkedIndexesTabs.forEach((index) => {
-    //   // Perform actions with the index
-    //   console.log("tab",index); // Example action: Output the index to the console
-    // });
-    transferRowsToTabs(checkedIndexesPackets, checkedIndexesTabs)
+    let movedPacketsToSameTab = false;
+    checkedIndexesTabs.forEach((index) => {
+      // Perform actions with the index
+      if(index == activeTabId)
+      {
+        movedPacketsToSameTab = true;
+      }
+    });
+
+    transferRowsToTabs(checkedIndexesPackets, checkedIndexesTabs);
+
+    closeNavPackets(0);
+
+    // to refresh tab if i moved packets to the same tab, but it won't show the animation of the panel slide anymore
+    if(movedPacketsToSameTab == true){
+    refreshCurrentTab();}
+
   }
 
   function updateSidePanelContent() {
@@ -168,6 +174,11 @@ function getCheckedRowIndexesPackets() {
     
       const label = document.createElement('label');
       label.textContent = `${tabName} - ID: ${tabId}`;
+
+      // Add event listener to label
+      label.addEventListener('click', () => {
+        checkbox.checked = !checkbox.checked;
+      });
     
       li.appendChild(checkbox);
       li.appendChild(label);
@@ -182,6 +193,11 @@ function getCheckedRowIndexesPackets() {
     document.getElementById(elementId).style.width = "100%";
     document.getElementById(elementId).style.height = "50%";
 
+    // Clear side panel content
+    const sidePanel = document.getElementById('mySidepanel-0');
+    const sidePanelContent = sidePanel.querySelector('ul');
+    sidePanelContent.innerHTML = '';
+
     // Update side panel content
     updateSidePanelContent();
   }
@@ -190,10 +206,5 @@ function getCheckedRowIndexesPackets() {
     var elementId = "mySidepanel-" + index;
     document.getElementById(elementId).style.width = "0%";
     document.getElementById(elementId).style.height = "0%";
-
-    // Clear side panel content
-    const sidePanel = document.getElementById('mySidepanel-0');
-    const sidePanelContent = sidePanel.querySelector('ul');
-    sidePanelContent.innerHTML = '';
   }
 

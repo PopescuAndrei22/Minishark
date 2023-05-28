@@ -11,6 +11,8 @@ let capturedPackets = {};
 
 let dataPackets = {};
 
+let patterns = {};
+
 window.onload = function() {
   createHomeTab();
   initializeThemeButtons();
@@ -47,10 +49,10 @@ async function liveCaptureFunction(currentID)
   dataPackets[currentID] = data;
 }
   
-async function parsePcapFile(filePath,currentID)
+async function parsePcapFile(currentID)
 {
   if(dataPackets[currentID] === undefined) {
-  data = await api.Operations(filePath);
+  data = await api.Operations(tabFilePath[currentID]);
 
   dataPackets[currentID] = data;
   }
@@ -58,31 +60,74 @@ async function parsePcapFile(filePath,currentID)
   myFunction(dataPackets[currentID],currentID);
 }
 
-  async function myFunction(data, currentID) {
+  // async function myFunction(data, currentID) {
 
-    // data = await api.Operations(filePath);
-    //dataPackets[currentID] = data;
-    // process the data here
+  //   // data = await api.Operations(filePath);
+  //   //dataPackets[currentID] = data;
+  //   // process the data here
     
-    const table = document.getElementById("printDataTable-"+currentID);
-    const tbody = table.getElementsByTagName("tbody")[0];
+  //   const table = document.getElementById("printDataTable-"+currentID);
+  //   const tbody = table.getElementsByTagName("tbody")[0];
 
-    data.forEach(obj => {
-      const row = tbody.insertRow();
-      row.insertCell().textContent = obj.index;
-      row.insertCell().textContent = obj.timeElapsed;
-      row.insertCell().textContent = obj.destinationIP;
-      row.insertCell().textContent = obj.sourceIP;
-      row.insertCell().textContent = obj.protocol;
-      row.insertCell().textContent = obj.originalPacketLength;
-      row.insertCell().textContent = obj.infoData;
 
-      // Add onclick event to each row
-      row.onclick = function(event) {
-        displayInfoData(obj, currentID, event);
-      }
+
+  //   data.forEach(obj => {
+  //     const row = tbody.insertRow();
+  //     row.insertCell().textContent = obj.index;
+  //     row.insertCell().textContent = obj.timeElapsed;
+  //     row.insertCell().textContent = obj.destinationIP;
+  //     row.insertCell().textContent = obj.sourceIP;
+  //     row.insertCell().textContent = obj.protocol;
+  //     row.insertCell().textContent = obj.originalPacketLength;
+  //     row.insertCell().textContent = obj.infoData;
+
+  //     // Add onclick event to each row
+  //     row.onclick = function(event) {
+  //       displayInfoData(obj, currentID, event);
+  //     }
+  //   });
+  // }
+
+async function myFunction(data, currentID) {
+  const table = document.getElementById("printDataTable-" + currentID);
+  const tbody = table.getElementsByTagName("tbody")[0];
+  
+  // Retrieve the patterns for the currentID
+  const currentPatterns = patterns[currentID];
+
+  filteredData = data;
+
+  if (currentPatterns) {
+    // Filter the data using the patterns
+    filteredData = data.filter(obj => {
+      return (
+        currentPatterns.indexRegex.test(obj.index) &&
+        currentPatterns.timeRegex.test(obj.timeElapsed) &&
+        currentPatterns.destinationRegex.test(obj.destinationIP) &&
+        currentPatterns.sourceRegex.test(obj.sourceIP) &&
+        currentPatterns.protocolRegex.test(obj.protocol) &&
+        currentPatterns.lengthRegex.test(obj.originalPacketLength) &&
+        currentPatterns.infoRegex.test(obj.infoData)
+      );
     });
   }
+
+  filteredData.forEach(obj => {
+    const row = tbody.insertRow();
+    row.insertCell().textContent = obj.index;
+    row.insertCell().textContent = obj.timeElapsed;
+    row.insertCell().textContent = obj.destinationIP;
+    row.insertCell().textContent = obj.sourceIP;
+    row.insertCell().textContent = obj.protocol;
+    row.insertCell().textContent = obj.originalPacketLength;
+    row.insertCell().textContent = obj.infoData;
+
+    // Add onclick event to each row
+    row.onclick = function(event) {
+      displayInfoData(obj, currentID, event);
+    }
+  });
+}
 
 function displayInfoData(obj,currentID, event) {
   const hexField = document.getElementById("hex-" + currentID);

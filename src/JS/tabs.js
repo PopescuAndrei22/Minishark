@@ -97,6 +97,22 @@ function addTab(filePath) {
 
     const tableContainer = document.createElement('div');
     tableContainer.innerHTML = `
+
+    <div>
+    <input type="text" id="textbox1" class="textbox" style="width: 200px;" placeholder="Search by index">
+    <input type="text" id="textbox2" class="textbox" style="width: 200px;" placeholder="Search by time">
+    <input type="text" id="textbox3" class="textbox" style="width: 200px;" placeholder="Search by destination IP">
+    <input type="text" id="textbox4" class="textbox" style="width: 200px;" placeholder="Search by source IP">
+    <input type="text" id="textbox5" class="textbox" style="width: 200px;" placeholder="Search by protocol">
+    <input type="text" id="textbox6" class="textbox" style="width: 200px;" placeholder="Search by length">
+    <input type="text" id="textbox7" class="textbox" style="width: 200px;" placeholder="Search by info">
+    </div>
+
+    <div>
+    <button onclick="retrieveTextboxValues()"> Apply filters </button>
+    <button> Clear filters </button>
+    </div>
+
     <div class="table-container">
     <table id="printDataTable-${tabCounter}">
     <thead>
@@ -166,6 +182,14 @@ function addTab(filePath) {
 
 }
 
+// to check this function for potential bugs (if it changes the activeTabId)
+function refreshCurrentTab() {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) {
+      activeTab.dispatchEvent(new Event('click'));
+    }
+  }
+
 function activateTab(event) {
     const tab = event.target.closest('.tab');
     const tabList = tab.parentElement;
@@ -199,7 +223,7 @@ function activateTab(event) {
     {
         if(isLiveCapture[tabId] === false)
         {
-            parsePcapFile(tabFilePath[tabId],tabId); // saving the content of the tab in data
+            parsePcapFile(tabId); // saving the content of the tab in data
             //parsePcapFile(tabFilePath[tabId],tabId);
         }
         else
