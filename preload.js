@@ -4,7 +4,6 @@ contextBridge.exposeInMainWorld('api', {
   // getPcapData: async (filePath) => {
   //   return await ipcRenderer.invoke('getPcapData', filePath);
   // },
-
   startFunction: () => {
     ipcRenderer.send('startCapture');
   },
@@ -35,10 +34,16 @@ contextBridge.exposeInMainWorld('api', {
   Operations: async (filePath) => {
     return await ipcRenderer.invoke('Operations', filePath);
   },
-  OperationsLiveCapture: async (networkInterfaceIndex) => {
-    return await ipcRenderer.invoke('OperationsLiveCapture', networkInterfaceIndex);
+  OperationsLiveCapture: async (networkInterfaceIndex, tabIndex) => {
+    return await ipcRenderer.invoke('OperationsLiveCapture', networkInterfaceIndex, tabIndex);
   },
   SavePCAP: async (data, filePath) => {
     return await ipcRenderer.invoke('SavePCAP', data, filePath);
+  },
+  StopLiveCapture: async (tabIndex) => {
+    return await ipcRenderer.invoke('StopLiveCapture', tabIndex);
+  },
+  StartLiveCapture: async (tabIndex) => {
+    return await ipcRenderer.invoke('StartLiveCapture', tabIndex);
   }
 });

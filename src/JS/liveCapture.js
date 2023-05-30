@@ -13,14 +13,16 @@ function runLiveCaptureLoop(tabId) {
     }, 2000);
 }
 
-function startFunction()
+async function startFunction()
 {
     console.log("Start function!");
+    await api.StartLiveCapture(parseInt(activeTabId));
 }
 
-function stopFunction()
+async function stopFunction()
 {
     console.log("Stop function!");
+    await api.StopLiveCapture(parseInt(activeTabId));
 }
 
 function restartFunction()

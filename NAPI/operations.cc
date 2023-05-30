@@ -236,28 +236,131 @@ napi_value SavePCAP(napi_env env, napi_callback_info info)
   return nullptr;
 }
 
+/* operations live capture start */
+napi_value NapiFunction(napi_env env, napi_callback_info info) {
+
+}
+std::unordered_map<int, std::atomic<bool>> countingFlags;
+
+// Function to send the number to Electron process
+void SendNumberToElectron(int index, int number) {
+    // TODO: Send the number to the Electron process using IPC
+    // You can use Electron's ipcMain module to handle the received number
+}
+
+void CountingThread(int index) {
+    std::atomic<bool>& isCountingRunning = countingFlags[index];
+    int i = 1;
+    while (isCountingRunning.load(std::memory_order_relaxed)) {
+        // Perform counting operations here
+        // ...
+
+        // Sleep for a certain duration to avoid excessive CPU usage
+        std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+        // Example: Print the current count for the specific index
+        std::cout << "Index " << index << ": " << i << std::endl;
+
+                // Check if the number is divisible by 100
+        if (i % 100 == 0) {
+            // Send the number to Electron
+            SendNumberToElectron(index, i);
+        }
+        i++;
+    }
+
+    // Counting loop has ended, perform any necessary cleanup or finalization
+}
+
+napi_value StartLiveCapture(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1];
+    int index = 0;
+
+    // Get the value of the first argument passed to the function (index)
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+    NAPI_CALL(env, napi_get_value_int32(env, args[0], &index));
+
+    std::atomic<bool>& isCountingRunning = countingFlags[index];
+
+    // Check if the counting is already running
+    if (!isCountingRunning.load(std::memory_order_relaxed)) {
+        isCountingRunning.store(true, std::memory_order_relaxed);
+
+        // Start the counting in a separate thread for the specific index
+        std::thread countingThread(CountingThread, index);
+        countingThread.detach();
+    }
+
+    return nullptr;
+}
+
+napi_value StopLiveCapture(napi_env env, napi_callback_info info) {
+    size_t argc = 1;
+    napi_value args[1];
+    int index = 0;
+
+    // Get the value of the first argument passed to the function (index)
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+    NAPI_CALL(env, napi_get_value_int32(env, args[0], &index));
+
+    std::atomic<bool>& isCountingRunning = countingFlags[index];
+
+    isCountingRunning.store(false, std::memory_order_relaxed);
+
+    return nullptr;
+}
+
 napi_value OperationsLiveCapture(napi_env env, napi_callback_info info)
 {
-  size_t argc = 1;
-  napi_value args[1];
-  int interfaceIndex = 0;
+    size_t argc = 2;
+    napi_value args[2];
+    int interfaceIndex = 0;
+    int tabIndex = 0;
 
-  // Get the value of the first argument passed to the function
-  NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
+    // Get the values of the arguments passed to the function
+    NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
 
-  // Convert the value to a C++ int
-  NAPI_CALL(env, napi_get_value_int32(env, args[0], &interfaceIndex));
+    // Convert the values to C++ integers
+    NAPI_CALL(env, napi_get_value_int32(env, args[0], &interfaceIndex));
+    NAPI_CALL(env, napi_get_value_int32(env, args[1], &tabIndex));
 
-  LiveCapture liveCapture;
-  liveCapture.getNetworkInterfaces();
-  liveCapture.selectNetworkInterface(interfaceIndex);
-  liveCapture.captureLivePackets();
+    // std::atomic<bool>& isCountingRunning = countingFlags[tabIndex];
 
-  PcapDeserializer ob;
-  ob.liveCaptureDeserializer(liveCapture.getCapturedPackets());
+    // // Check if the counting is already running
+    // if (!isCountingRunning.load(std::memory_order_relaxed)) {
+    //     isCountingRunning.store(true, std::memory_order_relaxed);
 
-  return getOutput(env, info, ob);
+    //     // Start the counting in a separate thread for the specific index
+    //     std::thread countingThread(CountingThread, tabIndex);
+    //     countingThread.detach();
+    // }
+
+    NapiFunction(env,info);
+
+
+
+    // Set the counting flag to true
+    //isCountingRunning.store(true, std::memory_order_relaxed);
+
+    // Start the counting in a separate thread
+    //std::thread countingThread(CountingThread);
+   // countingThread.detach();
+
+
+  // LiveCapture liveCapture;
+  // liveCapture.getNetworkInterfaces();
+  // liveCapture.selectNetworkInterface(interfaceIndex);
+  // liveCapture.captureLivePackets();
+
+  // PcapDeserializer ob;
+  // ob.liveCaptureDeserializer(liveCapture.getCapturedPackets());
+
+  // return getOutput(env, info, ob);
+
+  return nullptr;
 }
+/* operations live capture end */
 
 napi_value Operations(napi_env env, napi_callback_info info)
 {
@@ -301,10 +404,23 @@ napi_value init(napi_env env, napi_value exports)
   napi_value savePCAP;
   napi_create_function(env, nullptr, 0, SavePCAP, nullptr, &savePCAP);
 
+  napi_value stopLiveCapture; 
+  napi_create_function(env, nullptr, 0, StopLiveCapture, nullptr, &stopLiveCapture); 
+
+  napi_value startLiveCapture;
+  napi_create_function(env, nullptr, 0, StartLiveCapture, nullptr, &startLiveCapture); 
+
   napi_set_named_property(env, exports, "Operations", operations);
   napi_set_named_property(env, exports, "OperationsLiveCapture", operationsLiveCapture);
   napi_set_named_property(env, exports, "getInterfaceNames", getInterfaceNames);
   napi_set_named_property(env, exports, "SavePCAP", savePCAP);
+  napi_set_named_property(env, exports, "StopLiveCapture", stopLiveCapture); 
+  napi_set_named_property(env, exports, "StartLiveCapture", startLiveCapture); 
+
+  // Create the N-API function
+  napi_value napiFunction;
+  napi_create_function(env, nullptr, 0, NapiFunction, nullptr, &napiFunction);
+  napi_set_named_property(env, exports, "NapiFunction", napiFunction);
 
   return exports;
 }

@@ -228,6 +228,7 @@ function activateTab(event) {
         }
         else
         {
+            liveCaptureFunction(tabId);
         //runLiveCaptureLoop(tabId);
         }
         // handleInterfacenames();

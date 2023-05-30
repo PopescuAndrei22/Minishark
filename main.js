@@ -1,7 +1,8 @@
-const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog} = require('electron');
 const { spawn } = require('child_process');
 const path = require('path');
 const getPcapData = require("./NAPI/build/Release/operations");
+
 
 function createWindow(){
     const win = new BrowserWindow({
@@ -103,14 +104,21 @@ app.whenReady().then(() => {
         return getPcapData.Operations(filePath);
     });
 
-    ipcMain.handle('OperationsLiveCapture', async (event, networkInterfaceIndex) => {
-        return getPcapData.OperationsLiveCapture(networkInterfaceIndex);
+    ipcMain.handle('OperationsLiveCapture', async (event, networkInterfaceIndex, tabIndex) => {
+        return getPcapData.OperationsLiveCapture(networkInterfaceIndex, tabIndex);
     });
 
     ipcMain.handle('SavePCAP', async (event, data, filePath) => {
       return getPcapData.SavePCAP(data, filePath);
-  });
+    });
 
+    ipcMain.handle('StopLiveCapture', async (event, tabIndex) => {
+      return getPcapData.StopLiveCapture(tabIndex);
+    });
+
+    ipcMain.handle('StartLiveCapture', async (event, tabIndex) => {
+      return getPcapData.StartLiveCapture(tabIndex);
+    });
  });
   
 app.on('window-all-closed', () => {

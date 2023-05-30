@@ -44,9 +44,11 @@ function submitForm() {
 
 async function liveCaptureFunction(currentID)
 {
-  data = await api.OperationsLiveCapture(7);
+  data = await api.OperationsLiveCapture(7,parseInt(currentID));
   
-  dataPackets[currentID] = data;
+  //dataPackets[currentID] = data;
+
+  //myFunction(dataPackets[currentID],currentID);
 }
   
 async function parsePcapFile(currentID)
