@@ -47,7 +47,7 @@ th {
   
 .table-container {
     top: 1vh;
-    height: 47.5vh; /* set the height of the container */
+    height: 41.5vh; /* set the height of the container */
     overflow: auto;
     border: none;
 }

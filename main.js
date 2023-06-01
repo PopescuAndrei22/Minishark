@@ -1,8 +1,7 @@
-const { app, BrowserWindow, Menu, ipcMain, ipcRenderer, dialog} = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, dialog} = require('electron');
 const { spawn } = require('child_process');
 const path = require('path');
 const getPcapData = require("./NAPI/build/Release/operations");
-
 
 function createWindow(){
     const win = new BrowserWindow({
@@ -84,7 +83,7 @@ function createWindow(){
         win.webContents.send('window-loaded'); // Notify the window that it has finished loading
       });
     }
-    
+
     createMenu();
 }
 

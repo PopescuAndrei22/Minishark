@@ -1,6 +1,8 @@
 let data
 let tabCounter = 1;
 
+let textBoxValues = {};
+
 let tabContent = {};
 let tabFilePath = {};
 let isLiveCapture = {};
@@ -93,6 +95,25 @@ async function parsePcapFile(currentID)
 async function myFunction(data, currentID) {
   const table = document.getElementById("printDataTable-" + currentID);
   const tbody = table.getElementsByTagName("tbody")[0];
+
+  let indexValue = document.getElementById('textbox1');
+  let timeValue = document.getElementById('textbox2');
+  let destinationValue = document.getElementById('textbox3');
+  let sourceValue = document.getElementById('textbox4');
+  let protocolValue = document.getElementById('textbox5');
+  let lengthValue = document.getElementById('textbox6');
+  let infoValue = document.getElementById('textbox7');
+  
+  if(textBoxValues[currentID] != undefined)
+  {
+    indexValue.value = textBoxValues[currentID].index;
+    timeValue.value = textBoxValues[currentID].time;
+    destinationValue.value = textBoxValues[currentID].destination;
+    sourceValue.value = textBoxValues[currentID].source;
+    protocolValue.value = textBoxValues[currentID].protocol;
+    lengthValue.value = textBoxValues[currentID].length;
+    infoValue.value = textBoxValues[currentID].info;
+  }
   
   // Retrieve the patterns for the currentID
   const currentPatterns = patterns[currentID];
@@ -129,6 +150,11 @@ async function myFunction(data, currentID) {
       displayInfoData(obj, currentID, event);
     }
   });
+
+  if(tbody.getElementsByTagName('tr')[0] != undefined){
+    tbody.getElementsByTagName('tr')[0].classList.add("selected-row");
+    displayInfoData(filteredData[0], currentID);
+  }
 }
 
 function displayInfoData(obj,currentID, event) {
@@ -189,6 +215,8 @@ function displayInfoData(obj,currentID, event) {
     "<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Hex details in readable format</h2>" +
     obj.readableString;
 
+    /*this might slow down the application*/
+
   // Check if the event parameter is defined
   if (event && event.currentTarget) {
     // Remove the class from all rows
@@ -196,10 +224,11 @@ function displayInfoData(obj,currentID, event) {
     for (let i = 0; i < rows.length; i++) {
       rows[i].classList.remove("selected-row");
     }
-
+  
     // Add the class to the selected row
     event.currentTarget.classList.add("selected-row");
   }
+
 }
 
 function openNav(index) {

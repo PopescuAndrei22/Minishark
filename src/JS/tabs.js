@@ -110,7 +110,7 @@ function addTab(filePath) {
 
     <div>
     <button onclick="retrieveTextboxValues()"> Apply filters </button>
-    <button> Clear filters </button>
+    <button onclick="clearFilters()"> Clear filters </button>
     </div>
 
     <div class="table-container">

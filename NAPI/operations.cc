@@ -237,9 +237,6 @@ napi_value SavePCAP(napi_env env, napi_callback_info info)
 }
 
 /* operations live capture start */
-napi_value NapiFunction(napi_env env, napi_callback_info info) {
-
-}
 std::unordered_map<int, std::atomic<bool>> countingFlags;
 
 // Function to send the number to Electron process
@@ -325,28 +322,16 @@ napi_value OperationsLiveCapture(napi_env env, napi_callback_info info)
     NAPI_CALL(env, napi_get_value_int32(env, args[0], &interfaceIndex));
     NAPI_CALL(env, napi_get_value_int32(env, args[1], &tabIndex));
 
-    // std::atomic<bool>& isCountingRunning = countingFlags[tabIndex];
+    std::atomic<bool>& isCountingRunning = countingFlags[tabIndex];
 
-    // // Check if the counting is already running
-    // if (!isCountingRunning.load(std::memory_order_relaxed)) {
-    //     isCountingRunning.store(true, std::memory_order_relaxed);
+    //Check if the counting is already running
+    if (!isCountingRunning.load(std::memory_order_relaxed)) {
+        isCountingRunning.store(true, std::memory_order_relaxed);
 
-    //     // Start the counting in a separate thread for the specific index
-    //     std::thread countingThread(CountingThread, tabIndex);
-    //     countingThread.detach();
-    // }
-
-    NapiFunction(env,info);
-
-
-
-    // Set the counting flag to true
-    //isCountingRunning.store(true, std::memory_order_relaxed);
-
-    // Start the counting in a separate thread
-    //std::thread countingThread(CountingThread);
-   // countingThread.detach();
-
+        // Start the counting in a separate thread for the specific index
+        std::thread countingThread(CountingThread, tabIndex);
+        countingThread.detach();
+    }
 
   // LiveCapture liveCapture;
   // liveCapture.getNetworkInterfaces();
@@ -416,11 +401,6 @@ napi_value init(napi_env env, napi_value exports)
   napi_set_named_property(env, exports, "SavePCAP", savePCAP);
   napi_set_named_property(env, exports, "StopLiveCapture", stopLiveCapture); 
   napi_set_named_property(env, exports, "StartLiveCapture", startLiveCapture); 
-
-  // Create the N-API function
-  napi_value napiFunction;
-  napi_create_function(env, nullptr, 0, NapiFunction, nullptr, &napiFunction);
-  napi_set_named_property(env, exports, "NapiFunction", napiFunction);
 
   return exports;
 }
