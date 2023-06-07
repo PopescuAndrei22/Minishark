@@ -34,6 +34,7 @@ void LiveCapture::getNetworkInterfaces()
         // if (dev->description)
         //     printf("Description: %s\n", dev->description);
         // printf("\n");
+        
         interfaceNames.push_back(dev->name);
     }
 

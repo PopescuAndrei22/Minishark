@@ -26,9 +26,12 @@
   --color-tab-active: rgb(10, 117, 150);
   --color-tab-hover: rgb(3, 151, 60);
   --table-content-details-title: rgb(81, 175, 182);
-  --buttons: rgb(197, 11, 11);
-  --select-box-background: rgb(197, 11, 11);
-  --select-box-border: rgb(197, 11, 11);
+  --buttons: rgb(4, 66, 146);
+  --select-box-background: rgb(37, 61, 126);
+  --select-box-border: rgb(30, 151, 50);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
 }
 
 .theme-orange {
@@ -42,8 +45,11 @@
   --color-tab-hover: rgb(213, 223, 85);
   --table-content-details-title: rgb(216, 213, 210);
   --buttons: rgb(197, 11, 11);
-  --select-box-background: rgb(197, 11, 11);
+  --select-box-background: rgb(160, 124, 58);
   --select-box-border: rgb(197, 11, 11);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
 }
 
 .theme-crimson {
@@ -57,8 +63,11 @@
   --color-tab-hover: rgb(21, 209, 146);
   --table-content-details-title: rgb(38, 176, 180);
   --buttons: rgb(197, 11, 11);
-  --select-box-background: rgb(197, 11, 11);
+  --select-box-background: rgb(145, 27, 67);
   --select-box-border: rgb(197, 11, 11);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
 }
 
 .theme-azure {
@@ -72,8 +81,11 @@
   --color-tab-hover: rgb(21, 209, 146);
   --table-content-details-title: rgb(90, 243, 167);
   --buttons: rgb(197, 11, 11);
-  --select-box-background: rgb(197, 11, 11);
+  --select-box-background: rgb(93, 165, 206);
   --select-box-border: rgb(197, 11, 11);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
 }
 
 .theme-green {
@@ -87,8 +99,11 @@
   --color-tab-hover: rgba(231, 200, 97, 0.89);
   --table-content-details-title: rgb(233, 33, 76);
   --buttons: rgb(197, 11, 11);
-  --select-box-background: rgb(197, 11, 11);
+  --select-box-background: rgb(10, 211, 167);
   --select-box-border: rgb(197, 11, 11);
+    --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
 }
 
 /* [data-selected-theme="default"] {

@@ -35,8 +35,8 @@ contextBridge.exposeInMainWorld('api', {
   Operations: async (filePath) => {
     return await ipcRenderer.invoke('Operations', filePath);
   },
-  OperationsLiveCapture: async (networkInterfaceIndex, tabIndex) => {
-    return await ipcRenderer.invoke('OperationsLiveCapture', networkInterfaceIndex, tabIndex);
+  OperationsLiveCapture: async (networkInterfaceIndex) => {
+    return await ipcRenderer.invoke('OperationsLiveCapture', networkInterfaceIndex);
   },
   SavePCAP: async (data, filePath) => {
     return await ipcRenderer.invoke('SavePCAP', data, filePath);

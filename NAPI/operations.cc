@@ -11,6 +11,7 @@
 #include <pcap.h>
 #include <functional>
 #include <thread>
+#include <iostream>
 
 #define NAPI_CALL(env, call)                                      \
   do                                                              \
@@ -263,6 +264,7 @@ void CountingThread(int index) {
             // Send the number to Electron
             SendNumberToElectron(index, i);
         }
+        
         i++;
     }
 
@@ -310,41 +312,42 @@ napi_value StopLiveCapture(napi_env env, napi_callback_info info) {
 
 napi_value OperationsLiveCapture(napi_env env, napi_callback_info info)
 {
-    size_t argc = 2;
-    napi_value args[2];
+    size_t argc = 1;
+    napi_value args[1];
     int interfaceIndex = 0;
-    int tabIndex = 0;
+    //int tabIndex = 0;
 
     // Get the values of the arguments passed to the function
     NAPI_CALL(env, napi_get_cb_info(env, info, &argc, args, NULL, NULL));
 
     // Convert the values to C++ integers
     NAPI_CALL(env, napi_get_value_int32(env, args[0], &interfaceIndex));
-    NAPI_CALL(env, napi_get_value_int32(env, args[1], &tabIndex));
+    //NAPI_CALL(env, napi_get_value_int32(env, args[1], &tabIndex));
 
-    std::atomic<bool>& isCountingRunning = countingFlags[tabIndex];
+    // std::atomic<bool>& isCountingRunning = countingFlags[tabIndex];
 
-    //Check if the counting is already running
-    if (!isCountingRunning.load(std::memory_order_relaxed)) {
-        isCountingRunning.store(true, std::memory_order_relaxed);
+    // //Check if the counting is already running
+    // if (!isCountingRunning.load(std::memory_order_relaxed)) {
+    //     isCountingRunning.store(true, std::memory_order_relaxed);
 
-        // Start the counting in a separate thread for the specific index
-        std::thread countingThread(CountingThread, tabIndex);
-        countingThread.detach();
-    }
+    //     // Start the counting in a separate thread for the specific index
+    //     std::thread countingThread(CountingThread, tabIndex);
+    //     countingThread.detach();
+    // }
 
-  // LiveCapture liveCapture;
-  // liveCapture.getNetworkInterfaces();
-  // liveCapture.selectNetworkInterface(interfaceIndex);
-  // liveCapture.captureLivePackets();
+    // return nullptr;
 
-  // PcapDeserializer ob;
-  // ob.liveCaptureDeserializer(liveCapture.getCapturedPackets());
+  LiveCapture liveCapture;
+  liveCapture.getNetworkInterfaces();
+  liveCapture.selectNetworkInterface(interfaceIndex);
+  liveCapture.captureLivePackets();
 
-  // return getOutput(env, info, ob);
+  PcapDeserializer ob;
+  ob.liveCaptureDeserializer(liveCapture.getCapturedPackets());
 
-  return nullptr;
+  return getOutput(env, info, ob);
 }
+
 /* operations live capture end */
 
 napi_value Operations(napi_env env, napi_callback_info info)

@@ -54,13 +54,13 @@ function createWindow(){
                 win.webContents.send('stopCapture');
               },
             },
-            {
-              label: 'Restart',
-              click: () => {
-                // Handle "Restart" button click event
-                win.webContents.send('restartCapture');
-              },
-            },
+            // {
+            //   label: 'Restart',
+            //   click: () => {
+            //     // Handle "Restart" button click event
+            //     win.webContents.send('restartCapture');
+            //   },
+            // },
           ],
         },
         {
@@ -104,7 +104,7 @@ app.whenReady().then(() => {
     });
 
     ipcMain.handle('OperationsLiveCapture', async (event, networkInterfaceIndex, tabIndex) => {
-        return getPcapData.OperationsLiveCapture(networkInterfaceIndex, tabIndex);
+        return getPcapData.OperationsLiveCapture(networkInterfaceIndex);
     });
 
     ipcMain.handle('SavePCAP', async (event, data, filePath) => {

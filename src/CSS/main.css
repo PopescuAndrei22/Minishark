@@ -47,7 +47,7 @@ th {
   
 .table-container {
     top: 1vh;
-    height: 41.5vh; /* set the height of the container */
+    height: 39vh; /* set the height of the container */
     overflow: auto;
     border: none;
 }
@@ -139,6 +139,20 @@ th {
   background-color: var(--packet-details-button-hover-global);
 }
 /* dropdown end */
+
+.defaultbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: var(--packet-details-button-background-global);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  margin: 10px;
+}
+
+.defaultbtn:hover {
+  background-color: var(--packet-details-button-hover-global);
+}
 
 /* dropdown move packets start */
 .sidepanel-packets  {

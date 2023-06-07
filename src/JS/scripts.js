@@ -3,9 +3,16 @@ let tabCounter = 1;
 
 let textBoxValues = {};
 
+let indexCaptureTab = {};
+let timeCaptureTab = {};
+
 let tabContent = {};
 let tabFilePath = {};
 let isLiveCapture = {};
+
+let isLiveCaptureInProgress = {};
+
+let networkInterfaceTab = {};
 
 let activeTabId = null;
 
@@ -44,10 +51,11 @@ function submitForm() {
 //   console.log(data);
 // }
 
-async function liveCaptureFunction(currentID)
+async function liveCaptureFunction()
 {
-  data = await api.OperationsLiveCapture(7,parseInt(currentID));
-  
+  interfaces = await api.getInterfaceNames();
+  interfaceMenu(interfaces);
+
   //dataPackets[currentID] = data;
 
   //myFunction(dataPackets[currentID],currentID);
@@ -162,6 +170,31 @@ function displayInfoData(obj,currentID, event) {
   const readableField = document.getElementById("readableString-" + currentID);
   const dropdownField = document.getElementById("dropdown-" + currentID);
 
+  // Function to generate a random hexadecimal digit
+  function generateRandomHexDigit() {
+    const hexDigits = '0123456789ABCDEF';
+    const randomIndex = Math.floor(Math.random() * hexDigits.length);
+    return hexDigits[randomIndex];
+  }
+
+  // Function to generate a random MAC address
+  function generateRandomMacAddress() {
+    let macAddress = '';
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 2; j++) {
+        macAddress += generateRandomHexDigit();
+      }
+      if (i < 5) {
+        macAddress += ':';
+      }
+    }
+    return macAddress;
+  }
+
+  // Generate and display a random MAC address
+  const randomMacAddress1 = generateRandomMacAddress();
+  const randomMacAddress2 = generateRandomMacAddress();
+
   // i had .textContent before
   dropdownField.innerHTML = `
   <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Packet details </h2>
@@ -176,33 +209,31 @@ function displayInfoData(obj,currentID, event) {
 
 <div id="mySidepanel-2" class="sidepanel">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">×</a>
-<a href="#">About 2</a>
-<a href="#">Services</a>
-<a href="#">Clients</a>
-<a href="#">Contact</a>
+<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'> Ethernet details </h2>
+<a href="#">Destination: ${randomMacAddress1}</a>
+<a href="#">Source: ${randomMacAddress2}</a>
+<a href="#">Type: IPv4</a>
 </div>
 
 <div id="mySidepanel-3" class="sidepanel">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav(3)">×</a>
-<a href="#">About 3</a>
-<a href="#">Services</a>
-<a href="#">Clients</a>
-<a href="#">Contact</a>
+<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>IPv4 details </h2>
+<a href="#">Protocol: ${obj.protocol}</a>
+<a href="#">Source adress: ${obj.sourceIP}</a>
+<a href="#">Destination adress: ${obj.destinationIP}</a>
 </div>
 
 <div id="mySidepanel-4" class="sidepanel">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav(4)">×</a>
-<a href="#">About 4</a>
-<a href="#">Services</a>
-<a href="#">Clients</a>
-<a href="#">Contact</a>
+<h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'> Protocol details </h2>
+<a href="#">${obj.infoData}</a>
 </div>
 
 <div style="display: flex; flex-direction: column; align-items: center;">
   <button class="openbtn" onclick="openNav(1)">Frame ${obj.index}: ${obj.originalPacketLength} bytes on wire (${obj.originalPacketLength * 8} bits), ${obj.capturedPacketLength} bytes captured (${obj.capturedPacketLength * 8} bits)</button>
   <button class="openbtn" onclick="openNav(2)">Ethernet II</button>
-  <button class="openbtn" onclick="openNav(3)">Internet protocol version 4</button>
-  <button class="openbtn" onclick="openNav(4)">Transport layer security</button>
+  <button class="openbtn" onclick="openNav(3)">Internet protocol version 4, Src: ${obj.sourceIP}, Dst: ${obj.destinationIP}</button>
+  <button class="openbtn" onclick="openNav(4)">${obj.protocol}</button>
 </div>
 
   `;

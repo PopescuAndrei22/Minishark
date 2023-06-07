@@ -30,7 +30,7 @@ tableContainer.innerHTML = `
 <label for="file-upload" id="file-drag">
     <div id="start">
     <i class="fa fa-download" aria-hidden="true"></i>
-    <div id="select-file-name">Select a file or drag here</div>
+    <div id="select-file-name">Select a file</div>
     <span id="file-upload-btn" class="btn btn-primary" onclick="getFileName()">Select a file</span>
     <input class="btn btn-primary" type="button" value="Submit" onclick="submitForm()">
     </div>
@@ -57,7 +57,7 @@ tableContainer.innerHTML = `
 </div>
 
 <div>
-<button onclick="addTabLiveCapture()"> Live Capture </button>
+<button onclick="liveCaptureFunction()" class="defaultbtn"> Live Capture </button>
 </div>
 `;
 
@@ -109,8 +109,8 @@ function addTab(filePath) {
     </div>
 
     <div>
-    <button onclick="retrieveTextboxValues()"> Apply filters </button>
-    <button onclick="clearFilters()"> Clear filters </button>
+    <button onclick="retrieveTextboxValues()" class="defaultbtn"> Apply filters </button>
+    <button onclick="clearFilters()" class="defaultbtn"> Clear filters </button>
     </div>
 
     <div class="table-container">
@@ -133,13 +133,13 @@ function addTab(filePath) {
     <ul>
     </ul>
 
-    <button onclick="movePacketsToAnotherTab()"> Send packets </button>
+    <button onclick="movePacketsToAnotherTab()" class="defaultbtn"> Send packets </button>
 
     </div>
 
     <div id="movingPacketsOptions">
-    <button onclick="openNavPackets(0)"> Move to </button>
-    <button onclick="movePacketsFunction()"> Cancel </button>
+    <button onclick="openNavPackets(0)" class="defaultbtn"> Move to </button>
+    <button onclick="movePacketsFunction()" class="defaultbtn"> Cancel </button>
     </div>
 
     </tbody>
@@ -228,7 +228,11 @@ function activateTab(event) {
         }
         else
         {
-            liveCaptureFunction(tabId);
+            if(isLiveCaptureInProgress[tabId] == false && networkInterfaceTab[tabId] == 7)
+            {
+                //runLiveCaptureLoop(tabId);
+                //isLiveCaptureInProgress[tabId] = true;
+            }
         //runLiveCaptureLoop(tabId);
         }
         // handleInterfacenames();
@@ -245,6 +249,8 @@ function closeTab(event) {
 
     const tab = event.target.closest('.tab');
     const tabList = tab.parentElement;
+
+    isLiveCaptureInProgress[activeTabId] = false;
 
     if (tab.classList.contains('active')) {
         const tabs = tabList.querySelectorAll('.tab');

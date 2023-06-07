@@ -173,7 +173,8 @@ function getCheckedRowIndexesPackets() {
       checkbox.setAttribute('data-tab-index', tabId); 
     
       const label = document.createElement('label');
-      label.textContent = `${tabName} - ID: ${tabId}`;
+      // label.textContent = `${tabName} - ID: ${tabId}`;
+      label.textContent = `${tabName}`;
 
       // Add event listener to label
       label.addEventListener('click', () => {
