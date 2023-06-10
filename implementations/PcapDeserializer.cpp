@@ -126,16 +126,65 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
         oss << "DNS - Query ID: " << queryId << ", Flags: " << flags;
         info = oss.str();
     }
-    else
-        {
-            // For other protocols, include the protocol name
-            std::string protocolName = getProtocolName(packet);
 
-            // Construct the "Info" field
-            std::ostringstream oss;
-            oss << protocolName << " packet";
-            info = oss.str();
-        }
+
+    else if (protocol == 123)   // NTP
+    {
+        // Extract NTP information from the packet
+        // Extract other NTP fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "NTP";
+        info = oss.str();
+    }
+    else if (protocol == 138 || protocol == 139)   // NetBIOS
+    {
+        // Extract NetBIOS information from the packet
+        // Extract other NetBIOS fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "NetBIOS";
+        info = oss.str();
+    }
+    else if (protocol == 161)   // SNMP
+    {
+        // Extract SNMP information from the packet
+        // Extract other SNMP fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "SNMP";
+        info = oss.str();
+    }
+    else if (protocol == 50)    // ESP
+    {
+        // Extract ESP information from the packet
+        // Extract other ESP fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "ESP";
+        info = oss.str();
+    }
+    else if (protocol == 0)     // IP
+    {
+        // Extract IP information from the packet
+        // Extract other IP fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "IP";
+        info = oss.str();
+    }
+    else
+    {
+        // Construct the "Info" field
+        std::ostringstream oss;
+        oss << "Unknown protocol " << static_cast<int>(protocol);
+        info = oss.str();
+    }
 
     return info;
 }
@@ -162,6 +211,10 @@ std::string PcapDeserializer::getProtocolName(const PacketRecord& packet) const
         { 161, "SNMP" },
         { 162, "SNMP" },
         { 194, "IRC" },
+        { 80, "HTTP"},
+        { 68, "DHCP"},
+        { 67, "DHCP"},
+        { 443, "HTTPS"},
         // Add more protocol mappings here as needed
     };
 

@@ -64,6 +64,25 @@ void LiveCapture::captureLivePackets() {
         return;
     }
 
+    // Define the filter expression to capture specific protocols
+    const char* filterExpression = "";
+
+    // Compile the filter expression
+    struct bpf_program fp;
+    if (pcap_compile(handle, &fp, filterExpression, 0, PCAP_NETMASK_UNKNOWN) == -1) {
+        std::cout << "Error compiling filter: " << pcap_geterr(handle) << std::endl;
+        pcap_close(handle);
+        return;
+    }
+
+    // Apply the compiled filter
+    if (pcap_setfilter(handle, &fp) == -1) {
+        std::cout << "Error setting filter: " << pcap_geterr(handle) << std::endl;
+        pcap_freecode(&fp);
+        pcap_close(handle);
+        return;
+    }
+
     int numberOfCapturedPackets = 0;
 
     // Start capturing packets
@@ -110,6 +129,8 @@ void LiveCapture::captureLivePackets() {
     // Close the capture handle
     pcap_close(handle);
 }
+
+
 
 void LiveCapture::printInterfaces()
 {
