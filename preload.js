@@ -5,6 +5,17 @@ contextBridge.exposeInMainWorld('api', {
   // getPcapData: async (filePath) => {
   //   return await ipcRenderer.invoke('getPcapData', filePath);
   // },
+  receiveMessageFromMain: (callback) => {
+    ipcRenderer.on('message-from-main', (_, message, index) => {
+      callback(message, index);
+    });
+  },
+  startWorker: (index, indexInterface) => {
+    ipcRenderer.send('startWorker', index, indexInterface);
+  },
+  stopWorker: (index) => {
+    ipcRenderer.send('stopWorker', index);
+  },
   startFunction: () => {
     ipcRenderer.send('startCapture');
   },

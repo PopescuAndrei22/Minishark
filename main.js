@@ -2,6 +2,9 @@ const { app, BrowserWindow, Menu, ipcMain, dialog} = require('electron');
 const { spawn } = require('child_process');
 const path = require('path');
 const getPcapData = require("./NAPI/build/Release/operations");
+const { Worker } = require('worker_threads');
+
+const workers = {}; // Store active worker instances
 
 function createWindow(){
     const win = new BrowserWindow({
@@ -80,7 +83,8 @@ function createWindow(){
       Menu.setApplicationMenu(menu);
     
       win.webContents.on('did-finish-load', () => {
-        win.webContents.send('window-loaded'); // Notify the window that it has finished loading
+        //win.webContents.send('window-loaded'); // Notify the window that it has finished loading
+        //win.webContents.send('message-from-main', 'Hello from main process!');
       });
     }
 
@@ -117,6 +121,58 @@ app.whenReady().then(() => {
 
     ipcMain.handle('StartLiveCapture', async (event, tabIndex) => {
       return getPcapData.StartLiveCapture(tabIndex);
+    });
+
+    // worker threads
+
+    ipcMain.on('startWorker', async (event, index, indexInterface) => {
+      if (workers[index]) {
+        console.log(`Worker ${index} is already running.`);
+        return;
+      }
+      
+      // Start the worker process
+      const worker = new Worker(path.join(__dirname, 'worker.js'), { workerData: { index, indexInterface } });
+      workers[index] = worker;
+    
+      // Listen for messages from the worker process
+      worker.on('message', (result) => {
+        // Handle the message received from the worker process
+        //console.log(`Worker ${index}: ${result}`);
+        //console.log(`Worker ${JSON.stringify(result)}`);
+
+        const windows = BrowserWindow.getAllWindows();
+        windows.forEach((window) => {
+          window.webContents.send('message-from-main', result, index);
+        });
+      });
+    
+      // Handle errors from the worker process
+      worker.on('error', (error) => {
+        console.error(`Worker ${index} error:`, error);
+      });
+    
+      // Handle the worker process completion
+      worker.on('exit', (code) => {
+        console.log(`Worker ${index} exited with code ${code}`);
+        delete workers[index]; // Remove the worker from the active workers list
+      });
+    
+      // Wait for the worker to start
+      await new Promise((resolve) => {
+        worker.once('online', resolve);
+      });
+    });
+    ipcMain.on('stopWorker', (event, index) => {
+      const worker = workers[index];
+      if (!worker) {
+        console.log(`Worker ${index} is not running.`);
+        return;
+      }
+  
+      // Terminate the worker process
+      worker.terminate();
+      delete workers[index]; // Remove the worker from the active workers list
     });
  });
   

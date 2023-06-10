@@ -228,10 +228,10 @@ function activateTab(event) {
         }
         else
         {
-            if(isLiveCaptureInProgress[tabId] == false && networkInterfaceTab[tabId] == 7)
+            if(isLiveCaptureInProgress[tabId] == false)
             {
-                //runLiveCaptureLoop(tabId);
-                //isLiveCaptureInProgress[tabId] = true;
+                isLiveCaptureInProgress[tabId] = true;
+                startCapture(tabId,networkInterfaceTab[tabId]);
             }
         //runLiveCaptureLoop(tabId);
         }

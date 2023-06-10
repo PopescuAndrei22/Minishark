@@ -1,24 +1,10 @@
-function runLiveCaptureLoop(tabId) {
-    setTimeout(function () {
-        if(tabId != activeTabId)
-        {
-        return;
-        }
-
-        if(isLiveCaptureInProgress[tabId] == false)
-        {
-          return;
-        }
-
-        
-        // const classic = document.querySelector('#classic');
-        // capturedPackets[tabId] = classic.innerHTML;
-
-        getLiveCapturePacket(tabId);
-
-        runLiveCaptureLoop(tabId); // Recursive call to continue the loop
-    }, 4000);
-}
+api.receiveMessageFromMain((packet, index) => {
+  //console.log(packet, index); // Output: "Hello from main process!"
+  if(packet != undefined)
+  {
+    myFunction(packet,activeTabId);
+  }
+});
 
 async function getLiveCapturePacket(tabId)
 {
@@ -29,8 +15,6 @@ async function getLiveCapturePacket(tabId)
 
 async function interfaceForLiveCapture(interfaceIndex)
 {
-  console.log(interfaceIndex);
-
   addTabLiveCapture(interfaceIndex);
   // live capture
   // data = await api.OperationsLiveCapture(parseInt(interfaceIndex));
@@ -82,21 +66,14 @@ async function interfaceMenu(interfaces) {
 
 async function startFunction()
 {
-    console.log("Start function!");
-    //await api.StartLiveCapture(parseInt(activeTabId));
-    isLiveCaptureInProgress[activeTabId] = true;
-
-    if(isLiveCapture[activeTabId] == true)
-    {
-      runLiveCaptureLoop(activateTab);
-    }
+  console.log("Start function!");
+  startCapture(activeTabId,networkInterfaceTab[activeTabId]);
 }
 
 async function stopFunction()
 {
     console.log("Stop function!");
-    //await api.StopLiveCapture(parseInt(activeTabId));
-    isLiveCaptureInProgress[activeTabId] = false;
+    stopCapture(activeTabId);
 }
 
 function restartFunction()
