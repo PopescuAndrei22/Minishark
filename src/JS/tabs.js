@@ -205,6 +205,8 @@ function activateTab(event) {
 
     activeTabId = tabId;
 
+    selectedTableLine[tabId] = undefined;
+
     const classic = document.querySelector('#classic');
 
     classic.innerHTML = tabContent[tabId].innerHTML;
@@ -228,15 +230,16 @@ function activateTab(event) {
         }
         else
         {
-            if(isLiveCaptureInProgress[tabId] == false)
+            if(dataPackets[tabId] != undefined)
             {
-                isLiveCaptureInProgress[tabId] = true;
-                startCapture(tabId,networkInterfaceTab[tabId]);
+                myFunction(dataPackets[tabId],tabId);
             }
-        //runLiveCaptureLoop(tabId);
+
+            if(isLiveCaptureInProgress[tabId] === true){
+            startCapture(tabId,networkInterfaceTab[tabId]);
+            isLiveCaptureInProgress[tabId] = true
+            }
         }
-        // handleInterfacenames();
-        // handleLiveCapture();
     }
     else
     {
@@ -251,6 +254,7 @@ function closeTab(event) {
     const tabList = tab.parentElement;
 
     isLiveCaptureInProgress[activeTabId] = false;
+    stopCapture(activeTabId);
 
     if (tab.classList.contains('active')) {
         const tabs = tabList.querySelectorAll('.tab');

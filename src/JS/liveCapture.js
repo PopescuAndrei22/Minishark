@@ -2,7 +2,27 @@ api.receiveMessageFromMain((packet, index) => {
   //console.log(packet, index); // Output: "Hello from main process!"
   if(packet != undefined)
   {
-    myFunction(packet,activeTabId);
+    if(dataPackets[index] === undefined)
+    {
+      dataPackets[index] = [];
+    }
+
+    for(let i=0; i<packet.length; i++)
+    {
+      dataPackets[index].push(packet[i]);
+      dataPackets[index][ dataPackets[index].length - 1 ].index = dataPackets[index].length;
+      dataPackets[index][ dataPackets[index].length - 1 ].timeElapsed = (dataPackets[index][ dataPackets[index].length - 1 ].seconds + dataPackets[index][ dataPackets[index].length - 1 ].microseconds / 1000000.0) -
+                                                                        (dataPackets[index][0].seconds + dataPackets[index][0].microseconds / 1000000.0);
+
+
+      //(packet.seconds + packet.microseconds / 1000000.0) - (packets[0].seconds + packets[0].microseconds / 1000000.0);
+    }    
+
+    //myFunction(packet,activeTabId);
+    if(activeTabId == index)
+    {
+      myFunction(packet,index);
+    }
   }
 });
 
@@ -67,12 +87,14 @@ async function interfaceMenu(interfaces) {
 async function startFunction()
 {
   console.log("Start function!");
+  isLiveCaptureInProgress[activeTabId] = true;
   startCapture(activeTabId,networkInterfaceTab[activeTabId]);
 }
 
 async function stopFunction()
 {
     console.log("Stop function!");
+    isLiveCaptureInProgress[activeTabId] = false;
     stopCapture(activeTabId);
 }
 
@@ -181,7 +203,7 @@ tabContent[tabCounter] = tableContainer;
 
 isLiveCapture[tabCounter] = true;
 
-isLiveCaptureInProgress[tabCounter] = false;
+isLiveCaptureInProgress[tabCounter] = true;
 
 networkInterfaceTab[tabCounter] = interfaceIndex;
 

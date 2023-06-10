@@ -1,6 +1,8 @@
 let data
 let tabCounter = 1;
 
+let selectedTableLine = {};
+
 let textBoxValues = {};
 
 let indexCaptureTab = {};
@@ -72,34 +74,6 @@ async function parsePcapFile(currentID)
   myFunction(dataPackets[currentID],currentID);
 }
 
-  // async function myFunction(data, currentID) {
-
-  //   // data = await api.Operations(filePath);
-  //   //dataPackets[currentID] = data;
-  //   // process the data here
-    
-  //   const table = document.getElementById("printDataTable-"+currentID);
-  //   const tbody = table.getElementsByTagName("tbody")[0];
-
-
-
-  //   data.forEach(obj => {
-  //     const row = tbody.insertRow();
-  //     row.insertCell().textContent = obj.index;
-  //     row.insertCell().textContent = obj.timeElapsed;
-  //     row.insertCell().textContent = obj.destinationIP;
-  //     row.insertCell().textContent = obj.sourceIP;
-  //     row.insertCell().textContent = obj.protocol;
-  //     row.insertCell().textContent = obj.originalPacketLength;
-  //     row.insertCell().textContent = obj.infoData;
-
-  //     // Add onclick event to each row
-  //     row.onclick = function(event) {
-  //       displayInfoData(obj, currentID, event);
-  //     }
-  //   });
-  // }
-
 async function myFunction(data, currentID) {
   const table = document.getElementById("printDataTable-" + currentID);
   const tbody = table.getElementsByTagName("tbody")[0];
@@ -160,8 +134,11 @@ async function myFunction(data, currentID) {
   });
 
   if(tbody.getElementsByTagName('tr')[0] != undefined){
+    if(selectedTableLine[currentID] === undefined){
     tbody.getElementsByTagName('tr')[0].classList.add("selected-row");
     displayInfoData(filteredData[0], currentID);
+    selectedTableLine[currentID] = 1;
+  }
   }
 }
 
