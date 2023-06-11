@@ -1,34 +1,42 @@
-function retrieveTextboxValues()
-{
-    let indexValue = document.getElementById('textbox1').value;
-    let timeValue = document.getElementById('textbox2').value;
-    let destinationValue = document.getElementById('textbox3').value;
-    let sourceValue = document.getElementById('textbox4').value;
-    let protocolValue = document.getElementById('textbox5').value;
-    let lengthValue = document.getElementById('textbox6').value;
-    let infoValue = document.getElementById('textbox7').value;
+function retrieveTextboxValues() {
+  let indexValue = document.getElementById('textbox1').value;
+  let timeValue = document.getElementById('textbox2').value;
+  let destinationValue = document.getElementById('textbox3').value;
+  let sourceValue = document.getElementById('textbox4').value;
+  let protocolValue = document.getElementById('textbox5').value;
+  let lengthValue = document.getElementById('textbox6').value;
+  let infoValue = document.getElementById('textbox7').value;
 
-    patterns[activeTabId] = {
-        indexRegex: new RegExp(indexValue),
-        timeRegex: new RegExp(timeValue),
-        destinationRegex: new RegExp(destinationValue),
-        sourceRegex: new RegExp(sourceValue),
-        protocolRegex: new RegExp(protocolValue),
-        lengthRegex: new RegExp(lengthValue),
-        infoRegex: new RegExp(infoValue)
-      };
-    
-      textBoxValues[activeTabId] = {
-        index: indexValue,
-        time: timeValue,
-        destination: destinationValue,
-        source: sourceValue,
-        protocol: protocolValue,
-        length: lengthValue,
-        info: infoValue
-      };
-    
-    refreshCurrentTab();
+  patterns[activeTabId] = {
+    indexRegex: new RegExp(indexValue, 'i'),
+    timeRegex: new RegExp(timeValue, 'i'),
+    destinationRegex: new RegExp(destinationValue, 'i'),
+    sourceRegex: new RegExp(sourceValue, 'i'),
+    protocolRegex: new RegExp(protocolValue, 'i'),
+    lengthRegex: new RegExp(lengthValue, 'i'),
+    infoRegex: new RegExp(infoValue, 'i')
+  };
+
+  textBoxValues[activeTabId] = {
+    index: indexValue,
+    time: timeValue,
+    destination: destinationValue,
+    source: sourceValue,
+    protocol: protocolValue,
+    length: lengthValue,
+    info: infoValue
+  };
+
+  refreshCurrentTab();
+
+  // Set the values of the textboxes using the stored values
+  document.getElementById('textbox1').value = textBoxValues[activeTabId].index;
+  document.getElementById('textbox2').value = textBoxValues[activeTabId].time;
+  document.getElementById('textbox3').value = textBoxValues[activeTabId].destination;
+  document.getElementById('textbox4').value = textBoxValues[activeTabId].source;
+  document.getElementById('textbox5').value = textBoxValues[activeTabId].protocol;
+  document.getElementById('textbox6').value = textBoxValues[activeTabId].length;
+  document.getElementById('textbox7').value = textBoxValues[activeTabId].info;
 }
 
 function clearFilters()

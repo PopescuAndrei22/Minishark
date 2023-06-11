@@ -78,25 +78,6 @@ async function myFunction(data, currentID) {
   const table = document.getElementById("printDataTable-" + currentID);
   const tbody = table.getElementsByTagName("tbody")[0];
 
-  let indexValue = document.getElementById('textbox1');
-  let timeValue = document.getElementById('textbox2');
-  let destinationValue = document.getElementById('textbox3');
-  let sourceValue = document.getElementById('textbox4');
-  let protocolValue = document.getElementById('textbox5');
-  let lengthValue = document.getElementById('textbox6');
-  let infoValue = document.getElementById('textbox7');
-  
-  if(textBoxValues[currentID] != undefined)
-  {
-    indexValue.value = textBoxValues[currentID].index;
-    timeValue.value = textBoxValues[currentID].time;
-    destinationValue.value = textBoxValues[currentID].destination;
-    sourceValue.value = textBoxValues[currentID].source;
-    protocolValue.value = textBoxValues[currentID].protocol;
-    lengthValue.value = textBoxValues[currentID].length;
-    infoValue.value = textBoxValues[currentID].info;
-  }
-  
   // Retrieve the patterns for the currentID
   const currentPatterns = patterns[currentID];
 
