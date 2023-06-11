@@ -130,6 +130,8 @@ void LiveCapture::captureLivePackets() {
     pcap_close(handle);
 }
 
+
+
 void LiveCapture::printInterfaces()
 {
     std::cout<<"Size: "<<this->interfaceNames.size()<<'\n';
