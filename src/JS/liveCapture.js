@@ -36,13 +36,6 @@ async function getLiveCapturePacket(tabId)
 async function interfaceForLiveCapture(interfaceIndex)
 {
   addTabLiveCapture(interfaceIndex);
-  // live capture
-  // data = await api.OperationsLiveCapture(parseInt(interfaceIndex));
-
-  // dataPackets[currentID] = data;
-  // myFunction(dataPackets[currentID],currentID);
-
-  // runLiveCaptureLoop(currentID);
 }
 
 async function interfaceMenu(interfaces) {

@@ -10,8 +10,8 @@ function createWindow(){
     const win = new BrowserWindow({
         width: 1920,
         height: 1080,
-        minWidth: 500,
-        minHeight: 500,
+        minWidth: 850,
+        minHeight: 850,
         maxWidth: 1920,
         maxHeight: 1080,
         icon: __dirname + '/marinel.ico',

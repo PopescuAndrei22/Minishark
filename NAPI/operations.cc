@@ -68,6 +68,8 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
     double timeElapsed = pcapParsedData[i].getTimeElapsed();
     std::string destinationIP = pcapParsedData[i].getDestinationIP();
     std::string sourceIP = pcapParsedData[i].getSourceIP();
+    std::string destinationMac = pcapParsedData[i].getDestinationMac();
+    std::string sourceMac = pcapParsedData[i].getSourceMac();
     std::string protocol = pcapParsedData[i].getProtocol();
     std::string infoData = pcapParsedData[i].getInfo();
 
@@ -86,7 +88,7 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
 
     //NAPI variables for frontend data
 
-    napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed, napiHexValues, napiReadableString;
+    napi_value napiDestinationIP, napiSourceIP, napiProtocol, napiInfoData, napiIndex, napiTimeElapsed, napiHexValues, napiReadableString, napiDestinationMac, napiSourceMac;
 
     //NAPI variables for packet record
 
@@ -115,6 +117,8 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
     NAPI_CALL(env, napi_create_string_utf8(env, infoData.c_str(), infoData.length(), &napiInfoData));
     NAPI_CALL(env, napi_create_string_utf8(env, hexValues.c_str(), hexValues.length(), &napiHexValues));
     NAPI_CALL(env, napi_create_string_utf8(env, readableString.c_str(), readableString.length(), &napiReadableString));
+    NAPI_CALL(env, napi_create_string_utf8(env, destinationMac.c_str(), destinationMac.length(), &napiDestinationMac));
+    NAPI_CALL(env, napi_create_string_utf8(env, sourceMac.c_str(), sourceMac.length(), &napiSourceMac));
 
     NAPI_CALL(env, napi_set_named_property(env, obj, "index", napiIndex));
     NAPI_CALL(env, napi_set_named_property(env, obj, "timeElapsed", napiTimeElapsed));
@@ -124,6 +128,8 @@ napi_value getOutput(napi_env env, napi_callback_info info, PcapDeserializer &ob
     NAPI_CALL(env, napi_set_named_property(env, obj, "infoData", napiInfoData));
     NAPI_CALL(env, napi_set_named_property(env, obj, "hexValues", napiHexValues));
     NAPI_CALL(env, napi_set_named_property(env, obj, "readableString", napiReadableString));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "destinationMac", napiDestinationMac));
+    NAPI_CALL(env, napi_set_named_property(env, obj, "sourceMac", napiSourceMac));
 
     objectValues.push_back(obj);
   }

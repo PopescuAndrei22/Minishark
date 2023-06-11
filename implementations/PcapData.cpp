@@ -43,6 +43,16 @@ std::string PcapData::getDestinationIP() const
     return this->frontEndData.destinationIP;
 }
 
+std::string PcapData::getSourceMac() const 
+{
+    return this->frontEndData.sourceMac;
+}
+
+std::string PcapData::getDestinationMac() const 
+{
+    return this->frontEndData.destinationMac;
+}
+
 std::string PcapData::getProtocol() const 
 {
     return this->frontEndData.protocol;

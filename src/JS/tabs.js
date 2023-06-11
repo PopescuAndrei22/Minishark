@@ -98,7 +98,9 @@ function addTab(filePath) {
     const tableContainer = document.createElement('div');
     tableContainer.innerHTML = `
 
-    <div>
+    <div style="height: 10vh;">
+
+    <div class="textbox-container">
     <input type="text" id="textbox1" class="textbox" style="width: 200px;" placeholder="Search by index">
     <input type="text" id="textbox2" class="textbox" style="width: 200px;" placeholder="Search by time">
     <input type="text" id="textbox3" class="textbox" style="width: 200px;" placeholder="Search by destination IP">
@@ -111,6 +113,8 @@ function addTab(filePath) {
     <div>
     <button onclick="retrieveTextboxValues()" class="defaultbtn"> Apply filters </button>
     <button onclick="clearFilters()" class="defaultbtn"> Clear filters </button>
+    </div>
+
     </div>
 
     <div class="table-container">

@@ -23,6 +23,8 @@ struct FrontEndData
     Elapsed timeElapsed;
     std::string sourceIP;
     std::string destinationIP;
+    std::string sourceMac;
+    std::string destinationMac;
     std::string protocol;
     std::string info;
 
@@ -53,6 +55,8 @@ public:
     Elapsed getTimeElapsed() const;
     std::string getSourceIP() const;
     std::string getDestinationIP() const;
+    std::string getSourceMac() const;
+    std::string getDestinationMac() const;
     std::string getProtocol() const;
     std::string getInfo() const;
     std::string getReadableString() const;

@@ -192,7 +192,7 @@ function getCheckedRowIndexesPackets() {
   function openNavPackets(index) {
     var elementId = "mySidepanel-" + index;
     document.getElementById(elementId).style.width = "100%";
-    document.getElementById(elementId).style.height = "50%";
+    document.getElementById(elementId).style.height = "45vh";
 
     // Clear side panel content
     const sidePanel = document.getElementById('mySidepanel-0');
@@ -206,6 +206,6 @@ function getCheckedRowIndexesPackets() {
   function closeNavPackets(index) {
     var elementId = "mySidepanel-" + index;
     document.getElementById(elementId).style.width = "0%";
-    document.getElementById(elementId).style.height = "0%";
+    document.getElementById(elementId).style.height = "0vh";
   }
 

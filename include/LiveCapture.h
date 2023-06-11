@@ -7,7 +7,7 @@
 #include "PcapData.h"
 #include <node_api.h>
 
-#define MAX_PACKETS 1
+#define MAX_PACKETS 100
 
 class LiveCapture 
 {

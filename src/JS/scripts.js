@@ -123,37 +123,23 @@ async function myFunction(data, currentID) {
   }
 }
 
+let protocolMap = new Map();
+protocolMap.set("ARP", "Address Resolution Protocol");
+protocolMap.set("ICMP", "Internet Control Message Protocol");
+protocolMap.set("TCP", "Transmission Control Protocol");
+protocolMap.set("UDP", "User Datagram Protocol");
+protocolMap.set("HTTP", "Hypertext Transfer Protocol");
+protocolMap.set("HTTPS", "Hypertext Transfer Protocol Secure");
+protocolMap.set("DNS", "Domain Name System");
+protocolMap.set("DHCP", "Dynamic Host Configuration Protocol");
+
 function displayInfoData(obj,currentID, event) {
   const hexField = document.getElementById("hex-" + currentID);
   const readableField = document.getElementById("readableString-" + currentID);
   const dropdownField = document.getElementById("dropdown-" + currentID);
 
-  // Function to generate a random hexadecimal digit
-  function generateRandomHexDigit() {
-    const hexDigits = '0123456789ABCDEF';
-    const randomIndex = Math.floor(Math.random() * hexDigits.length);
-    return hexDigits[randomIndex];
-  }
+  let protocolFullName = protocolMap.get(obj.protocol);
 
-  // Function to generate a random MAC address
-  function generateRandomMacAddress() {
-    let macAddress = '';
-    for (let i = 0; i < 6; i++) {
-      for (let j = 0; j < 2; j++) {
-        macAddress += generateRandomHexDigit();
-      }
-      if (i < 5) {
-        macAddress += ':';
-      }
-    }
-    return macAddress;
-  }
-
-  // Generate and display a random MAC address
-  const randomMacAddress1 = generateRandomMacAddress();
-  const randomMacAddress2 = generateRandomMacAddress();
-
-  // i had .textContent before
   dropdownField.innerHTML = `
   <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Packet details </h2>
 
@@ -168,8 +154,8 @@ function displayInfoData(obj,currentID, event) {
 <div id="mySidepanel-2" class="sidepanel">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav(2)">×</a>
 <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'> Ethernet details </h2>
-<a href="#">Destination: ${randomMacAddress1}</a>
-<a href="#">Source: ${randomMacAddress2}</a>
+<a href="#">Destination: ${obj.destinationMac}</a>
+<a href="#">Source: ${obj.sourceMac}</a>
 <a href="#">Type: IPv4</a>
 </div>
 
@@ -191,7 +177,7 @@ function displayInfoData(obj,currentID, event) {
   <button class="openbtn" onclick="openNav(1)">Frame ${obj.index}: ${obj.originalPacketLength} bytes on wire (${obj.originalPacketLength * 8} bits), ${obj.capturedPacketLength} bytes captured (${obj.capturedPacketLength * 8} bits)</button>
   <button class="openbtn" onclick="openNav(2)">Ethernet II</button>
   <button class="openbtn" onclick="openNav(3)">Internet protocol version 4, Src: ${obj.sourceIP}, Dst: ${obj.destinationIP}</button>
-  <button class="openbtn" onclick="openNav(4)">${obj.protocol}</button>
+  <button class="openbtn" onclick="openNav(4)">${protocolFullName}</button>
 </div>
 
   `;

@@ -301,10 +301,23 @@ void PcapDeserializer::getData()
             */
 
             // front end data
-            std::string destinationIP, sourceIP, protocolName, informations;
+            std::string destinationIP, sourceIP, protocolName, informations, sourceMac, destinationMac;
 
             uint32_t srcIp = (packet.packetContent[26] << 24) | (packet.packetContent[27] << 16) | (packet.packetContent[28] << 8) | packet.packetContent[29];
             uint32_t dstIp = (packet.packetContent[30] << 24) | (packet.packetContent[31] << 16) | (packet.packetContent[32] << 8) | packet.packetContent[33];
+
+            uint64_t srcMac = (static_cast<uint64_t>(packet.packetContent[6]) << 40) |
+                  (static_cast<uint64_t>(packet.packetContent[7]) << 32) |
+                  (static_cast<uint64_t>(packet.packetContent[8]) << 24) |
+                  (static_cast<uint64_t>(packet.packetContent[9]) << 16) |
+                  (static_cast<uint64_t>(packet.packetContent[10]) << 8) |
+                  packet.packetContent[11];
+            uint64_t dstMac = (static_cast<uint64_t>(packet.packetContent[0]) << 40) |
+                  (static_cast<uint64_t>(packet.packetContent[1]) << 32) |
+                  (static_cast<uint64_t>(packet.packetContent[2]) << 24) |
+                  (static_cast<uint64_t>(packet.packetContent[3]) << 16) |
+                  (static_cast<uint64_t>(packet.packetContent[4]) << 8) |
+                  packet.packetContent[5];
 
             std::ostringstream oss;
             oss << ((srcIp >> 24) & 0xff) << "." << ((srcIp >> 16) & 0xff) << "." << ((srcIp >> 8) & 0xff) << "." << (srcIp & 0xff);
@@ -317,6 +330,28 @@ void PcapDeserializer::getData()
 
             oss.str("");
 
+            oss << std::hex << std::setw(2) << std::setfill('0') << ((srcMac >> 40) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((srcMac >> 32) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((srcMac >> 24) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((srcMac >> 16) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((srcMac >> 8) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << (srcMac & 0xff);
+            sourceMac = oss.str();
+
+            oss.str("");
+
+            oss << std::hex << std::setw(2) << std::setfill('0') << ((dstMac >> 40) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((dstMac >> 32) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((dstMac >> 24) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((dstMac >> 16) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << ((dstMac >> 8) & 0xff) << ":"
+                << std::hex << std::setw(2) << std::setfill('0') << (dstMac & 0xff);
+            destinationMac = oss.str();
+
+            oss.str("");
+
+            //oss with bitwise operation to get the hardwaretype for arp protocol
+
             protocolName = this->getProtocolName(packet);
 
             informations = this->getInfo(packet);
@@ -324,6 +359,8 @@ void PcapDeserializer::getData()
             parseFrontEnd.index = counter;
             parseFrontEnd.sourceIP = sourceIP;
             parseFrontEnd.destinationIP = destinationIP;
+            parseFrontEnd.sourceMac = sourceMac;
+            parseFrontEnd.destinationMac = destinationMac;
             parseFrontEnd.protocol = protocolName;
             parseFrontEnd.info = informations;
             parseFrontEnd.timeElapsed = (packet.seconds + packet.microseconds / 1000000.0) - (packets[0].seconds + packets[0].microseconds / 1000000.0);

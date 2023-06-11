@@ -46,8 +46,8 @@ th {
   }
   
 .table-container {
-    top: 1vh;
-    height: 39vh; /* set the height of the container */
+    top: 15vh;
+    height: 45vh; /* set the height of the container */
     overflow: auto;
     border: none;
 }
@@ -55,8 +55,8 @@ th {
 .table-details {
     padding: 8px;
     position: absolute; /* position relative to the nearest positioned ancestor */
-    top: 50vh; /* start at 50% page height */
-    height: 50%; /* limit the height to 50% page height */
+    top: 60vh;  /*start at 50% page height */
+    height: 40vh; /* limit the height to 50% page height */
     width: 50%; /* set the width to full page width */
     overflow-x: auto; /* enable horizontal scrollbar if content exceeds width */
     white-space: nowrap;
@@ -66,8 +66,8 @@ th {
 .table-content-details {
     padding: 20px;
     position: absolute; /*position relative to the nearest positioned ancestor */
-    top: 50vh; /* start at 50% page height */
-    height: 50%; /* limit the height to 50% page height */
+    top: 60vh;  /*start at 50% page height */
+    height: 40vh; /* limit the height to 50% page height */
     width: 25%; /* set the width to full page width */
     overflow-y: auto; /* add vertical scrollbar */ /* enable horizontal scrollbar if content exceeds width */
     word-wrap: break-word;
@@ -82,8 +82,8 @@ th {
 #movingPacketsOptions {
   display: none;
   position: fixed;
-  bottom: 50%;
-  width: 100%;
+  bottom: 40vh;
+  width: calc(100% - 5px);
   background-color: #f0f0f0;
   padding: 10px;
 }
@@ -95,7 +95,7 @@ th {
   position: fixed;
   z-index: 1;
   height: 250px;
-  top: 50%;
+  top: 60vh;
   left: 0;
   background-color: var(--side-panel-background-global);
   overflow-x: hidden;
@@ -160,7 +160,7 @@ th {
   position: fixed;
   z-index: 1;
   height: 0%;
-  top: 0%;
+  top: 15vh;
   left: 0;
   background-color: var(--side-panel-background-global);
   overflow-x: hidden;
@@ -189,14 +189,27 @@ th {
 }
 /* dropdown move packets end */
 
-/* styling tab start */
-.tab-container {
+.textbox-container {
+  width: 100%;
   overflow-x: auto;
   white-space: nowrap;
 }
 
+.textbox {
+  display: inline-block;
+  width: 200px;
+  margin-right: 10px;
+}
+
+/* styling tab start */
+.tab-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  height: 5vh;
+}
+
 .tab-container::-webkit-scrollbar {
-  height: 8px;
+  height: 3px;
 }
 
 .tab-container::-webkit-scrollbar-track {
@@ -205,15 +218,14 @@ th {
 
 .tab-container::-webkit-scrollbar-thumb {
   background-color: #888;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .tab-list {
   display: inline-block;
-  padding: 0;
-  margin: 0;
   list-style: none;
   position: relative;
+  height: 100%;
 }
 
 .tab {
@@ -251,7 +263,8 @@ th {
 
 /* styling scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
+    height: 5px; /* Adjust the height as desired */
   }
 
   ::-webkit-scrollbar-track {
