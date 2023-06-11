@@ -123,6 +123,7 @@ async function myFunction(data, currentID) {
   }
 }
 
+//create a map to store the protocol and their full name
 let protocolMap = new Map();
 protocolMap.set("ARP", "Address Resolution Protocol");
 protocolMap.set("ICMP", "Internet Control Message Protocol");
@@ -138,8 +139,9 @@ function displayInfoData(obj,currentID, event) {
   const readableField = document.getElementById("readableString-" + currentID);
   const dropdownField = document.getElementById("dropdown-" + currentID);
 
+  //search for obj.protocol in the map and get the full name
   let protocolFullName = protocolMap.get(obj.protocol);
-
+  // i had .textContent before
   dropdownField.innerHTML = `
   <h2 class='table-content-details-title' style='font-size: 24px; padding-bottom: 10px;text-align:center'>Packet details </h2>
 
@@ -217,4 +219,3 @@ function closeNav(index) {
   document.getElementById(elementId).style.width = "0%";
   document.getElementById(elementId).style.height = "0%";
 }
-

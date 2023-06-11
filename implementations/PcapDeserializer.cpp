@@ -19,11 +19,16 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
     - MDNS
     - QUICK
     */
+   std::unordered_map<uint16_t, std::string> protocolNames = {
+    {0x0800, "IPv4"},
+    {0x0806, "ARP"},
+    };
 
     if (protocol == 6)   // TCP
         {
             uint16_t srcPort = (packet.packetContent[34] << 8) | packet.packetContent[35];
             uint16_t dstPort = (packet.packetContent[36] << 8) | packet.packetContent[37];
+
             uint8_t flags = packet.packetContent[47];
 
             if (srcPort == 53 || dstPort == 53)
@@ -128,6 +133,7 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
     }
 
 
+
     else if (protocol == 123)   // NTP
     {
         // Extract NTP information from the packet
@@ -178,6 +184,120 @@ std::string PcapDeserializer::getInfo(const PacketRecord& packet) const
         oss << "IP";
         info = oss.str();
     }
+    else if (protocol == 250)    // DHT
+    {
+    // Extract DHT information from the packet
+    // Extract other DHT fields as needed
+
+    // Construct the "Info" field
+    std::ostringstream oss;
+    oss << "DHT";
+    info = oss.str();
+    }
+    else if ((packet.packetContent[12] << 8) | packet.packetContent[13] == 0x0806)    // ARP
+    {
+        // Extract ARP information from the packet
+        // Extract other ARP fields as needed
+
+        // Construct the "Info" field
+        std::ostringstream oss;
+        //make a bitwise operation to get the opcode
+        uint16_t opcode = (packet.packetContent[20] << 8) | packet.packetContent[21];
+        if (opcode == 1)
+        {
+            uint32_t targetIP = (packet.packetContent[38] << 24) |
+                                (packet.packetContent[39] << 16) |
+                                (packet.packetContent[40] << 8) |
+                                packet.packetContent[41];
+
+            uint32_t senderIP = (packet.packetContent[28] << 24) |
+                                (packet.packetContent[29] << 16) |
+                                (packet.packetContent[30] << 8) |
+                                packet.packetContent[31];
+
+            // Format the target IP address
+            std::ostringstream targetIPOss;
+            targetIPOss << ((targetIP >> 24) & 0xFF) << '.'
+                        << ((targetIP >> 16) & 0xFF) << '.'
+                        << ((targetIP >> 8) & 0xFF) << '.'
+                        << (targetIP & 0xFF);
+            std::string formattedTargetIP = targetIPOss.str();
+
+            // Format the sender IP address
+            std::ostringstream senderIPOss;
+            senderIPOss << ((senderIP >> 24) & 0xFF) << '.'
+                        << ((senderIP >> 16) & 0xFF) << '.'
+                        << ((senderIP >> 8) & 0xFF) << '.'
+                        << (senderIP & 0xFF);
+            std::string formattedSenderIP = senderIPOss.str();
+
+            oss << "Who has " << formattedTargetIP << " ? Tell " << formattedSenderIP;
+        }
+
+        else if (opcode == 2)
+        {
+            // Make bitwise operations to get the sender IP address
+            uint32_t senderIP = (packet.packetContent[28] << 24) |
+                                (packet.packetContent[29] << 16) |
+                                (packet.packetContent[30] << 8) |
+                                packet.packetContent[31];
+
+            // Make bitwise operations to get the sender MAC address
+            uint64_t senderMAC = (static_cast<uint64_t>(packet.packetContent[22]) << 40) |
+                                (static_cast<uint64_t>(packet.packetContent[23]) << 32) |
+                                (static_cast<uint64_t>(packet.packetContent[24]) << 24) |
+                                (static_cast<uint64_t>(packet.packetContent[25]) << 16) |
+                                (static_cast<uint64_t>(packet.packetContent[26]) << 8) |
+                                static_cast<uint64_t>(packet.packetContent[27]);
+
+            if (senderMAC == 00005e000101)
+            {
+                // Extract the source IP address
+                uint32_t sourceIP = (packet.packetContent[26] << 24) |
+                                    (packet.packetContent[27] << 16) |
+                                    (packet.packetContent[28] << 8) |
+                                    packet.packetContent[29];
+
+                // Format the IP address
+                std::ostringstream ipOss;
+                ipOss << ((sourceIP >> 24) & 0xFF) << '.'
+                    << ((sourceIP >> 16) & 0xFF) << '.'
+                    << ((sourceIP >> 8) & 0xFF) << '.'
+                    << (sourceIP & 0xFF);
+                std::string formattedIP = ipOss.str();
+
+                info = formattedIP;
+            }
+
+            // Format the IP address
+            std::ostringstream ipOss;
+            ipOss << ((senderIP >> 24) & 0xFF) << '.'
+                << ((senderIP >> 16) & 0xFF) << '.'
+                << ((senderIP >> 8) & 0xFF) << '.'
+                << (senderIP & 0xFF);
+            std::string formattedIP = ipOss.str();
+
+            // Format the MAC address
+            std::ostringstream macOss;
+            macOss << std::hex << std::setfill('0');
+            macOss << std::setw(2) << static_cast<int>((senderMAC >> 40) & 0xFF) << ':'
+                << std::setw(2) << static_cast<int>((senderMAC >> 32) & 0xFF) << ':'
+                << std::setw(2) << static_cast<int>((senderMAC >> 24) & 0xFF) << ':'
+                << std::setw(2) << static_cast<int>((senderMAC >> 16) & 0xFF) << ':'
+                << std::setw(2) << static_cast<int>((senderMAC >> 8) & 0xFF) << ':'
+                << std::setw(2) << static_cast<int>(senderMAC & 0xFF);
+            std::string formattedMAC = macOss.str();
+
+            oss << formattedIP << " is at " << formattedMAC;
+        }
+
+
+        else
+        {
+            oss << "ARP";
+        }
+        info = oss.str();
+    }
     else
     {
         // Construct the "Info" field
@@ -215,6 +335,8 @@ std::string PcapDeserializer::getProtocolName(const PacketRecord& packet) const
         { 68, "DHCP" },
         { 67, "DHCP" },
         { 443, "HTTPS" },
+        { 250, "BT-DHT" },
+        { 0x0806, "ARP" }
         
         // Add more protocol mappings here as needed
     };
@@ -238,11 +360,20 @@ std::string PcapDeserializer::getProtocolName(const PacketRecord& packet) const
         // }
     }
 
+    // if((packet.packetContent[12] << 8) | packet.packetContent[13] == 0x0806)
+    // {
+    //     return "ARP";
+    // }
+
     auto it = protocolMap.find(protocol);
     if (it != protocolMap.end())
         {
             return it->second;
         }
+    else if((packet.packetContent[12] << 8) | packet.packetContent[13] == 0x0806)
+    {
+         return "ARP";
+    }
     else
         {
             return "Unknown";
@@ -352,13 +483,23 @@ void PcapDeserializer::getData()
 
             //oss with bitwise operation to get the hardwaretype for arp protocol
 
+
+
             protocolName = this->getProtocolName(packet);
 
             informations = this->getInfo(packet);
 
             parseFrontEnd.index = counter;
-            parseFrontEnd.sourceIP = sourceIP;
-            parseFrontEnd.destinationIP = destinationIP;
+            if(protocolName == "ARP")
+            {
+                parseFrontEnd.sourceIP = sourceMac;
+                parseFrontEnd.destinationIP = destinationMac;
+            }
+            else
+            {
+                parseFrontEnd.sourceIP = sourceIP;
+                parseFrontEnd.destinationIP = destinationIP;
+            }
             parseFrontEnd.sourceMac = sourceMac;
             parseFrontEnd.destinationMac = destinationMac;
             parseFrontEnd.protocol = protocolName;
