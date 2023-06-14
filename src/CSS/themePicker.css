@@ -1,0 +1,229 @@
+:root {
+  --color-background-global: rgb(22, 0, 150);
+  --color-text-global: rgb(57, 224, 121);
+  --color-table-hover-global: rgb(37, 158, 13);
+  --color-table-header-global: rgb(42, 160, 175);
+  --color-table-selected-row-global: rgb(18, 156, 92);
+  --color-tab-global: rgb(7, 178, 221);
+  --color-tab-active-global: rgb(10, 117, 150);
+  --color-tab-hover-global: rgb(3, 151, 60);
+  --table-content-details-title-global: rgb(81, 175, 182);
+  --buttons-global: rgb(4, 66, 146);
+  --select-box-background-global: rgb(37, 61, 126);
+  --select-box-border-global: rgb(30, 151, 50);
+  --packet-details-button-background-global: rgb(29, 139, 139);
+  --packet-details-button-hover-global: rgb(107, 209, 107);
+  --side-panel-background-global: rgb(20, 24, 85);
+}
+
+.theme-default {
+  --color-background: rgb(22, 0, 150);
+  --color-text: rgb(57, 224, 121);
+  --color-table-hover: rgb(37, 158, 13);
+  --color-table-header: rgb(42, 160, 175);
+  --color-table-selected-row: rgb(18, 156, 92);
+  --color-tab: rgb(7, 178, 221);
+  --color-tab-active: rgb(10, 117, 150);
+  --color-tab-hover: rgb(3, 151, 60);
+  --table-content-details-title: rgb(81, 175, 182);
+  --buttons: rgb(4, 66, 146);
+  --select-box-background: rgb(37, 61, 126);
+  --select-box-border: rgb(30, 151, 50);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
+}
+
+.theme-orange {
+  --color-background: rgb(255, 109, 96);
+  --color-text: rgb(90, 80, 80);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(219, 138, 17);
+  --color-table-selected-row: rgb(231, 217, 88);
+  --color-tab: rgb(243, 239, 238);
+  --color-tab-active: rgb(173, 173, 173);
+  --color-tab-hover: rgb(213, 223, 85);
+  --table-content-details-title: rgb(216, 213, 210);
+  --buttons: rgb(219, 134, 22);
+  --select-box-background: rgb(233, 182, 13);
+  --select-box-border: rgb(141, 141, 141);
+  --packet-details-button-background: rgb(100, 104, 104);
+  --packet-details-button-hover: rgb(226, 224, 123);
+  --side-panel-background: rgb(20, 24, 85);
+}
+
+.theme-crimson {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(233, 197, 78);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(184, 64, 27);
+  --color-table-selected-row: rgb(151, 73, 8);
+  --color-tab: rgb(7, 121, 141);
+  --color-tab-active: rgb(8, 127, 224);
+  --color-tab-hover: rgb(21, 209, 146);
+  --table-content-details-title: rgb(38, 176, 180);
+  --buttons: rgb(197, 11, 11);
+  --select-box-background: rgb(145, 27, 67);
+  --select-box-border: rgb(197, 11, 11);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
+}
+
+.theme-azure {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(228, 228, 228);
+  --color-table-hover: rgb(2, 158, 179);
+  --color-table-header: rgb(0, 151, 13);
+  --color-table-selected-row: rgb(1, 158, 98);
+  --color-tab: rgb(53, 156, 197);
+  --color-tab-active: rgb(8, 127, 224);
+  --color-tab-hover: rgb(21, 209, 146);
+  --table-content-details-title: rgb(90, 243, 167);
+  --buttons: rgb(12, 128, 182);
+  --select-box-background: rgb(93, 165, 206);
+  --select-box-border: rgb(252, 252, 252);
+  --packet-details-button-background: rgb(29, 139, 139);
+  --packet-details-button-hover: rgb(107, 209, 107);
+  --side-panel-background: rgb(20, 24, 85);
+}
+
+.theme-green {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(170, 23, 55);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(199, 63, 22);
+  --color-table-selected-row: rgb(233, 111, 89);
+  --color-tab: rgb(212, 176, 14);
+  --color-tab-active: rgb(199, 150, 14);
+  --color-tab-hover: rgba(231, 200, 97, 0.89);
+  --table-content-details-title: rgb(233, 33, 76);
+  --buttons: rgb(70, 221, 24);
+  --select-box-background: rgb(10, 211, 167);
+  --select-box-border: rgb(197, 11, 11);
+  --packet-details-button-background: rgb(199, 63, 22);
+  --packet-details-button-hover: rgb(248, 137, 86);
+  --side-panel-background: rgb(5, 78, 21);
+}
+
+/* [data-selected-theme="default"] {
+  --color-background: rgb(22, 0, 150);
+  --color-text: rgb(160, 216, 114);
+  --color-table-hover: rgb(37, 158, 13);
+  --color-table-header: rgb(42, 160, 175);
+  --color-table-selected-row: rgb(18, 156, 92);
+  --color-tab: rgb(7, 178, 221);
+  --color-tab-active: rgb(10, 117, 150);
+  --color-tab-hover: rgb(3, 151, 60);
+  --table-content-details-title: rgb(81, 175, 182);
+}
+
+[data-selected-theme="orange"] {
+  --color-background: rgb(255, 109, 96);
+  --color-text: rgb(90, 80, 80);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(219, 138, 17);
+  --color-table-selected-row: rgb(231, 217, 88);
+  --color-tab: rgb(243, 239, 238);
+  --color-tab-active: rgb(173, 173, 173);
+  --color-tab-hover: rgb(213, 223, 85);
+  --table-content-details-title: rgb(216, 213, 210);
+}
+
+[data-selected-theme="crimson"] {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(233, 197, 78);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(184, 64, 27);
+  --color-table-selected-row: rgb(151, 73, 8);
+  --color-tab: rgb(7, 121, 141);
+  --color-tab-active: rgb(8, 127, 224);
+  --color-tab-hover: rgb(21, 209, 146);
+  --table-content-details-title: rgb(38, 176, 180);
+}
+
+[data-selected-theme="azure"] {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(228, 228, 228);
+  --color-table-hover: rgb(2, 158, 179);
+  --color-table-header: rgb(0, 151, 13);
+  --color-table-selected-row: rgb(1, 158, 98);
+  --color-tab: rgb(53, 156, 197);
+  --color-tab-active: rgb(8, 127, 224);
+  --color-tab-hover: rgb(21, 209, 146);
+  --table-content-details-title: rgb(90, 243, 167);
+}
+
+[data-selected-theme="green"] {
+  --color-background: rgb(204, 32, 32);
+  --color-text: rgb(170, 23, 55);
+  --color-table-hover: rgb(248, 137, 86);
+  --color-table-header: rgb(199, 63, 22);
+  --color-table-selected-row: rgb(233, 111, 89);
+  --color-tab: rgb(212, 176, 14);
+  --color-tab-active: rgb(199, 150, 14);
+  --color-tab-hover: rgba(231, 200, 97, 0.89);
+  --table-content-details-title: rgb(233, 33, 76);
+} */
+
+/* custom theme start */
+
+/* custom theme end */
+
+title {
+  background-color:#ddd;
+}
+
+.theme-container {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.35);
+    padding: 3rem 4rem;
+
+    margin-left: 20%;
+    margin-right: 20%;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+  }
+
+  .custom-title
+  {
+    color:rgb(71, 6, 102);
+
+    font-size: 35px;
+
+    padding: 30px;
+
+    margin-left: 10%;
+    margin-right: 10%;
+
+    border: 1px solid white;
+  }
+
+  .theme-switcher {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1.312rem;
+  }
+
+  .theme-button {
+
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .theme-button:hover{
+    border: 2px solid yellow;
+  }
+
+  .theme-button-customize {
+
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .theme-button-customize:hover{
+    border: 2px solid yellow;
+  }
