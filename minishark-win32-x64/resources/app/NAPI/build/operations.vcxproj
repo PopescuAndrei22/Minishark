@@ -1,0 +1,330 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C32CA91A-3FD3-373A-8B38-4B29635F07DA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>operations</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">operations.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">operations.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">operations.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">operations.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">operations</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.node</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NAPI_VERSION=4;CMAKE_INTDIR="Debug";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;NAPI_VERSION=4;CMAKE_INTDIR=\"Debug\";operations_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/Debug/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/Debug/operations.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="Release";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"Release\";operations_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/Release/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/Release/operations.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="MinSizeRel";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"MinSizeRel\";operations_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/MinSizeRel/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/MinSizeRel/operations.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR="RelWithDebInfo";operations_EXPORTS</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;NAPI_VERSION=4;CMAKE_INTDIR=\"RelWithDebInfo\";operations_EXPORTS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\include\node;D:\GitHub\Minishark\NAPI\..\include;D:\GitHub\Minishark\NAPI\..\NAPI\npcap\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>C:\Users\Andrei\.cmake-js\node-x64\v18.15.0\win-x64\node.lib;wpcap.lib;Packet.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64;D:/GitHub/Minishark/NAPI/../NAPI/npcap/Lib/x64/$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>NODE.EXE</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>D:/GitHub/Minishark/NAPI/build/RelWithDebInfo/operations.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/GitHub/Minishark/NAPI/build/RelWithDebInfo/operations.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\GitHub\Minishark\NAPI\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/GitHub/Minishark/NAPI/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+D:\bin\cmake.exe -SD:/GitHub/Minishark/NAPI -BD:/GitHub/Minishark/NAPI/build --check-stamp-file D:/GitHub/Minishark/NAPI/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeCXXCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeRCCompiler.cmake;D:\GitHub\Minishark\NAPI\build\CMakeFiles\3.26.3\CMakeSystem.cmake;D:\share\cmake-3.26\Modules\CMakeCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCXXInformation.cmake;D:\share\cmake-3.26\Modules\CMakeCommonLanguageInclude.cmake;D:\share\cmake-3.26\Modules\CMakeGenericSystem.cmake;D:\share\cmake-3.26\Modules\CMakeInitializeConfigs.cmake;D:\share\cmake-3.26\Modules\CMakeLanguageInformation.cmake;D:\share\cmake-3.26\Modules\CMakeRCInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInformation.cmake;D:\share\cmake-3.26\Modules\CMakeSystemSpecificInitialize.cmake;D:\share\cmake-3.26\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-C.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Compiler\MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-C.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC-CXX.cmake;D:\share\cmake-3.26\Modules\Platform\Windows-MSVC.cmake;D:\share\cmake-3.26\Modules\Platform\Windows.cmake;D:\share\cmake-3.26\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\GitHub\Minishark\NAPI\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="D:\GitHub\Minishark\NAPI\operations.cc" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\PcapData.cpp" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\PcapDeserializer.cpp" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\LiveCapture.cpp" />
+    <ClCompile Include="D:\GitHub\Minishark\implementations\PcapSerializer.cpp" />
+    <ClCompile Include="C:\Users\Andrei\AppData\Roaming\npm\node_modules\cmake-js\lib\cpp\win_delay_load_hook.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\GitHub\Minishark\NAPI\build\ZERO_CHECK.vcxproj">
+      <Project>{879A9F2D-A497-3896-A2F1-CE6497A80319}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
